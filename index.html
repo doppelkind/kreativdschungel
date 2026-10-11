@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>Tierkinder entdecken Berufe — Malbuch ab 4 Jahren | Kreativ Dschungel</title>
-<meta name="description" content="40 Ausmalbilder von Tierkindern in ihrem Traumberuf. Malbuch für Kinder ab 4 Jahren, einseitig bedruckt, große Flächen und kräftige Linien. Blick ins Buch online.">
+<title>Kreativ Dschungel — Wimmelbuch und Malbuch für Kinder</title>
+<meta name="description" content="Zwei Bücher von Sebastian Mentzel: ein Weihnachts-Wimmelbuch mit acht Suchbildern aus dem kleinen Walddorf und ein Malbuch mit 40 Ausmalbildern zum Thema Berufe. Blick ins Buch online.">
 <link rel="canonical" href="https://kreativdschungel.de/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Kreativ Dschungel">
-<meta property="og:title" content="Tierkinder entdecken Berufe — Malbuch ab 4 Jahren">
-<meta property="og:description" content="40 Ausmalbilder von Tierkindern in ihrem Traumberuf. Für Kinder ab 4, einseitig bedruckt, große Flächen und kräftige Linien.">
+<meta property="og:title" content="Kreativ Dschungel — Wimmelbuch und Malbuch für Kinder">
+<meta property="og:description" content="Ein Weihnachts-Wimmelbuch aus dem kleinen Walddorf und ein Malbuch mit 40 Berufen. Mit Blick ins Buch.">
 <meta property="og:url" content="https://kreativdschungel.de/">
 <meta property="og:image" content="https://kreativdschungel.de/vorschaubild.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Cover von Tierkinder entdecken Berufe: Katze als Bäckerin, Hund als Feuerwehrmann, Elefant als Bauarbeiter, Reh als Floristin und Affe als Astronaut auf einer Wiese">
+<meta property="og:image:alt" content="Die Cover beider Bücher: Weihnachten im kleinen Walddorf und Tierkinder entdecken Berufe">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Pinterest: Code aus Einstellungen → Beanspruchte Konten → Website beanspruchen -->
@@ -32,13 +32,15 @@
 <link rel="stylesheet" href="schriften.css">
 
 <style>
-/* Layout: eine Seite, die dem Buchcover folgt — Himmelband oben, Wiese unten,
-   Inhalt auf cremefarbenem Papier dazwischen. Alle Farben sind aus der
-   Coverdatei ausgelesen, damit Website und Buch zusammengehören. */
+/* Layout: eine Seite, zwei Buchkapitel. Jedes Buch bekommt einen eigenen
+   Farbakzent, der aus seinem Cover stammt — Tannengrün und Rot für das
+   Wimmelbuch, Orange und Himmelblau für das Malbuch. Der Rahmen bleibt
+   cremefarben, damit beide zur selben Marke gehören. */
 :root{
   --creme:#F8F5E7; --papier:#FFFDF6; --tief:#1A3F57; --tief-weich:#4E6F80;
   --orange:#CE5F35; --himmel:#A9CDE5; --himmel-hell:#DCEDF5;
-  --wiese:#AEC865; --wiese-tief:#7A9440; --gelb:#E8C457;
+  --wiese:#AEC865; --gelb:#E8C457;
+  --tanne:#1E3D28; --tanne-hell:#E3EBE1; --rot:#8C2828; --gold:#C9A227;
   --linie:#E4DECA; --schatten:rgba(26,63,87,.13);
 
   --titel:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
@@ -50,7 +52,8 @@
   :root:not([data-theme="light"]){
     --creme:#122A38; --papier:#1B3A4B; --tief:#EAF3F7; --tief-weich:#A9C4D1;
     --orange:#F08A5D; --himmel:#2C5468; --himmel-hell:#1B3A4B;
-    --wiese:#8FB255; --wiese-tief:#A9C86E; --gelb:#F0CF6B;
+    --wiese:#8FB255; --gelb:#F0CF6B;
+    --tanne:#8FC3A1; --tanne-hell:#17333A; --rot:#E08A80; --gold:#E3C76B;
     --linie:#2C5468; --schatten:rgba(0,0,0,.45);
     color-scheme:dark;
   }
@@ -58,7 +61,8 @@
 :root[data-theme="dark"]{
   --creme:#122A38; --papier:#1B3A4B; --tief:#EAF3F7; --tief-weich:#A9C4D1;
   --orange:#F08A5D; --himmel:#2C5468; --himmel-hell:#1B3A4B;
-  --wiese:#8FB255; --wiese-tief:#A9C86E; --gelb:#F0CF6B;
+  --wiese:#8FB255; --gelb:#F0CF6B;
+  --tanne:#8FC3A1; --tanne-hell:#17333A; --rot:#E08A80; --gold:#E3C76B;
   --linie:#2C5468; --schatten:rgba(0,0,0,.45);
   color-scheme:dark;
 }
@@ -78,125 +82,118 @@ a{color:inherit}
 img{max-width:100%; height:auto; display:block}
 
 .wrap{max-width:1120px; margin-inline:auto; padding-inline:max(20px,env(safe-area-inset-left,0px))}
-section{padding-block:clamp(54px,8vw,96px)}
-.kicker{
-  font-family:var(--titel); font-weight:700; font-size:.92rem;
-  letter-spacing:.12em; text-transform:uppercase; color:var(--orange);
-}
+section{padding-block:clamp(54px,8vw,92px)}
+.kicker{font-family:var(--titel); font-weight:700; font-size:.92rem;
+        letter-spacing:.12em; text-transform:uppercase; color:var(--orange)}
 h2{font-size:clamp(1.9rem,4.4vw,2.9rem); margin-block:10px 14px}
 .lead{font-size:clamp(1.03rem,1.7vw,1.17rem); color:var(--tief-weich); max-width:62ch}
 
 /* ---------- Hinweisstreifen: nach dem Ausfüllen löschen ---------- */
-.hinweis{
-  background:var(--tief); color:var(--creme); font-family:var(--titel);
-  font-weight:600; font-size:.86rem; padding:10px 20px; text-align:center;
-}
+.hinweis{background:var(--tief); color:var(--creme); font-family:var(--titel);
+         font-weight:600; font-size:.86rem; padding:10px 20px; text-align:center}
 .hinweis b{color:var(--gelb)}
 
 /* ---------- Kopfzeile ---------- */
-header.site{
-  position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
-  background:color-mix(in srgb,var(--creme) 90%,transparent);
-  backdrop-filter:blur(12px); border-bottom:1px solid var(--linie);
-}
+header.site{position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+            background:color-mix(in srgb,var(--creme) 90%,transparent);
+            backdrop-filter:blur(12px); border-bottom:1px solid var(--linie)}
 .bar{display:flex; align-items:center; gap:16px; padding-block:10px}
 .marke{display:flex; align-items:center; gap:11px; text-decoration:none; white-space:nowrap}
 .marke img{width:48px; height:48px; flex:none; border-radius:50%;
            object-fit:cover; box-shadow:0 2px 7px var(--schatten)}
 .marke span{font-family:var(--titel); font-weight:800; font-size:1.06rem; line-height:1.1}
 nav.haupt{flex:1; min-width:0; display:flex; gap:2px; overflow-x:auto; scrollbar-width:none;
-  /* abgeschnittene Einträge ausblenden statt hart kappen */
   mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent);
   -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent)}
 nav.haupt::-webkit-scrollbar{display:none}
-nav.haupt a{
-  font-family:var(--titel); font-weight:600; font-size:.95rem; text-decoration:none;
-  white-space:nowrap; padding:8px 13px; border-radius:99px; color:var(--tief-weich);
-}
+nav.haupt a{font-family:var(--titel); font-weight:600; font-size:.95rem; text-decoration:none;
+            white-space:nowrap; padding:8px 13px; border-radius:99px; color:var(--tief-weich)}
 nav.haupt a:hover,nav.haupt a.aktiv{color:var(--tief); background:var(--himmel-hell)}
 
-.knopf{
-  display:inline-flex; align-items:center; gap:9px; text-decoration:none;
-  font-family:var(--titel); font-weight:700; font-size:1rem;
-  padding:13px 24px; border-radius:99px; border:none; cursor:pointer;
-  background:var(--orange); color:#fff;
-  box-shadow:0 4px 0 #A54826, 0 8px 18px var(--schatten);
-  transition:transform .1s ease, box-shadow .1s ease;
-}
+.knopf{display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+       font-family:var(--titel); font-weight:700; font-size:1rem;
+       padding:13px 24px; border-radius:99px; border:none; cursor:pointer;
+       background:var(--orange); color:#fff;
+       box-shadow:0 4px 0 #A54826, 0 8px 18px var(--schatten);
+       transition:transform .1s ease, box-shadow .1s ease}
 .knopf:hover{transform:translateY(-2px); box-shadow:0 6px 0 #A54826, 0 12px 22px var(--schatten)}
 .knopf:active{transform:translateY(2px); box-shadow:0 2px 0 #A54826}
-.knopf.zweit{background:var(--himmel-hell); color:var(--tief); box-shadow:0 4px 0 var(--himmel), 0 8px 18px var(--schatten)}
-.knopf.zweit:hover{box-shadow:0 6px 0 var(--himmel), 0 12px 22px var(--schatten)}
-.knopf.zweit:active{box-shadow:0 2px 0 var(--himmel)}
+.knopf.gruen{background:var(--rot); box-shadow:0 4px 0 #5E1A1A, 0 8px 18px var(--schatten); color:#fff}
+.knopf.gruen:hover{box-shadow:0 6px 0 #5E1A1A, 0 12px 22px var(--schatten)}
+.knopf.gruen:active{box-shadow:0 2px 0 #5E1A1A}
+.knopf.zweit{background:var(--papier); color:var(--tief);
+             box-shadow:0 4px 0 var(--linie), 0 8px 18px var(--schatten)}
+.knopf.zweit:hover{box-shadow:0 6px 0 var(--linie), 0 12px 22px var(--schatten)}
+.knopf.zweit:active{box-shadow:0 2px 0 var(--linie)}
 .knopf.klein{padding:10px 18px; font-size:.9rem}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--orange); outline-offset:3px}
 .bar .knopf{flex:none}
-@media (max-width:820px){ .bar .knopf i{display:none} .marke span{display:none} }
+@media (max-width:860px){ .marke span{display:none} }
 
 /* ---------- Hero ---------- */
-.hero{
-  position:relative; overflow:hidden;
-  background:linear-gradient(180deg,var(--himmel) 0%,var(--himmel-hell) 58%,var(--creme) 100%);
-  padding-block:clamp(40px,6vw,72px) clamp(70px,9vw,110px);
-}
-.hero .wolke{
-  position:absolute; border-radius:99px; background:var(--papier); opacity:.62;
-  box-shadow:38px -16px 0 -5px var(--papier), 86px -6px 0 -11px var(--papier);
-}
-.hero .w1{width:150px; height:46px; top:96px; left:-30px}
-.hero .w2{width:120px; height:38px; top:188px; right:11%}
-.hero .w3{width:96px;  height:32px; top:74px;  right:30%}
-@media (max-width:820px){ .hero .w2,.hero .w3{display:none} }
-.hero-raster{position:relative; display:grid; grid-template-columns:1.08fr .92fr;
-             gap:clamp(28px,5vw,60px); align-items:center}
-.hero h1{font-size:clamp(2.3rem,5.6vw,3.9rem); margin-top:12px}
+.hero{position:relative; overflow:hidden; padding-block:clamp(40px,6vw,70px) clamp(56px,8vw,86px);
+      background:linear-gradient(180deg,var(--himmel) 0%,var(--himmel-hell) 55%,var(--creme) 100%)}
+.hero .wolke{position:absolute; border-radius:99px; background:var(--papier); opacity:.6;
+  box-shadow:38px -16px 0 -5px var(--papier), 86px -6px 0 -11px var(--papier)}
+.hero .w1{width:150px; height:46px; top:92px; left:-30px}
+.hero .w2{width:120px; height:38px; top:206px; right:9%}
+@media (max-width:820px){ .hero .w2{display:none} }
+.hero-raster{position:relative; display:grid; grid-template-columns:1fr .92fr;
+             gap:clamp(26px,4vw,52px); align-items:center}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem); margin-top:12px}
 .hero h1 .ton{color:var(--orange)}
-.unterzeile{font-family:var(--titel); font-weight:600; font-size:clamp(1.1rem,2.3vw,1.45rem);
-            color:var(--tief); margin-top:10px}
-.hero p.lead{margin-top:16px; color:var(--tief); opacity:.86}
+.hero p.lead{margin-top:16px; color:var(--tief); opacity:.88}
 .tasten{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
-.fakten{display:flex; flex-wrap:wrap; gap:9px; margin-top:26px; list-style:none; padding:0}
-.fakten li{
-  font-family:var(--titel); font-weight:600; font-size:.88rem; padding:7px 15px;
-  border-radius:99px; background:var(--papier); color:var(--tief);
-  box-shadow:0 2px 6px var(--schatten);
-}
-.coverbild{
-  border-radius:8px; box-shadow:0 18px 40px rgba(26,63,87,.28);
-  transform:rotate(-2deg); width:100%;
-}
-@media (max-width:820px){ .hero-raster{grid-template-columns:1fr} .coverbild{max-width:340px; margin-inline:auto} }
+.zweibuch{display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:end}
+.zweibuch a{text-decoration:none; display:block}
+.zweibuch img{border-radius:8px; box-shadow:0 16px 34px rgba(26,63,87,.3); width:100%}
+.zweibuch a:nth-child(1) img{transform:rotate(-2.5deg)}
+.zweibuch a:nth-child(2) img{transform:rotate(2deg)}
+.zweibuch span{display:block; font-family:var(--titel); font-weight:600; font-size:.84rem;
+               text-align:center; margin-top:14px; color:var(--tief)}
+@media (max-width:820px){ .hero-raster{grid-template-columns:1fr} }
 
-/* ---------- Karten ---------- */
-.karten{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-top:34px}
-.karte{background:var(--papier); border-radius:var(--r-l); padding:26px 24px;
+/* ---------- Buchkapitel ---------- */
+.buch{padding-block:clamp(54px,8vw,92px)}
+.buch.walddorf{background:var(--tanne-hell)}
+.buch-kopf{display:grid; grid-template-columns:.78fr 1.22fr; gap:clamp(26px,4vw,52px); align-items:center}
+.buch-kopf img.cover{border-radius:8px; box-shadow:0 16px 36px rgba(26,63,87,.26)}
+.buch h2{font-size:clamp(1.8rem,4.2vw,2.7rem)}
+.buch .reihe{font-family:var(--titel); font-weight:600; font-size:1.08rem; margin-top:8px}
+.merkmale{display:flex; flex-wrap:wrap; gap:9px; margin-top:22px; list-style:none; padding:0}
+.merkmale li{font-family:var(--titel); font-weight:600; font-size:.86rem; padding:7px 15px;
+             border-radius:99px; background:var(--papier); box-shadow:0 2px 6px var(--schatten)}
+@media (max-width:760px){ .buch-kopf{grid-template-columns:1fr} .buch-kopf img.cover{max-width:300px} }
+
+.szenen{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:34px}
+.szenen figure{margin:0; background:var(--papier); border-radius:var(--r-m); padding:10px;
+               box-shadow:0 3px 14px var(--schatten)}
+.szenen img{border-radius:8px; width:100%}
+.szenen figcaption{font-family:var(--titel); font-weight:600; font-size:.9rem;
+                   text-align:center; padding-top:9px}
+@media (max-width:620px){ .szenen{grid-template-columns:1fr} }
+
+.motive{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px}
+.motive figure{margin:0; background:var(--papier); border-radius:var(--r-m); padding:10px;
+               box-shadow:0 3px 14px var(--schatten)}
+.motive img{border-radius:8px; background:#fff; aspect-ratio:760/991; object-fit:contain; width:100%}
+.motive figcaption{font-family:var(--titel); font-weight:600; font-size:.9rem;
+                   text-align:center; padding-top:9px}
+@media (max-width:820px){ .motive{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:440px){ .motive{grid-template-columns:1fr} }
+
+.karten{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:16px; margin-top:30px}
+.karte{background:var(--papier); border-radius:var(--r-l); padding:22px 21px;
        box-shadow:0 3px 14px var(--schatten); min-width:0}
-.karte h3{font-size:1.16rem; margin-bottom:8px}
-.karte p{color:var(--tief-weich); font-size:.98rem}
-.karte .zeichen{
-  width:50px; height:50px; border-radius:99px; display:grid; place-items:center;
-  margin-bottom:15px; background:var(--himmel-hell);
-}
-.karte .zeichen svg{width:27px; height:27px}
+.karte h3{font-size:1.08rem; margin-bottom:7px}
+.karte p{color:var(--tief-weich); font-size:.95rem}
 
-/* ---------- Blick ins Buch ---------- */
-.galerie{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:34px}
-@media (max-width:820px){ .galerie{grid-template-columns:repeat(2,1fr)} }
-@media (max-width:440px){ .galerie{grid-template-columns:1fr} }
-.galerie figure{margin:0; background:var(--papier); border-radius:var(--r-m);
-                padding:12px; box-shadow:0 3px 14px var(--schatten)}
-.galerie img{border-radius:8px; background:#fff; aspect-ratio:760/991; object-fit:contain}
-.galerie figcaption{font-family:var(--titel); font-weight:600; font-size:.92rem;
-                    text-align:center; padding-top:10px; color:var(--tief)}
-
-/* ---------- Anlässe ---------- */
-.anlaesse{display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; list-style:none; padding:0}
-.anlaesse li{font-family:var(--titel); font-weight:600; font-size:.96rem;
+.anlaesse{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; list-style:none; padding:0}
+.anlaesse li{font-family:var(--titel); font-weight:600; font-size:.95rem;
              padding:10px 19px; border-radius:99px; background:var(--wiese); color:#223010}
 :root[data-theme="dark"] .anlaesse li{color:#0E1C08}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .anlaesse li{color:#0E1C08}}
 
-/* ---------- Autor ---------- */
 .autor{display:grid; grid-template-columns:.7fr 1.3fr; gap:clamp(24px,5vw,52px); align-items:center}
 .autor .bild{border-radius:var(--r-xl); overflow:hidden; background:var(--papier);
              box-shadow:0 6px 20px var(--schatten)}
@@ -207,7 +204,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
           width:fit-content; max-width:100%; box-shadow:0 3px 14px var(--schatten)}
 .postfach code{font-family:var(--text); font-size:1rem; user-select:all; word-break:break-all}
 
-/* ---------- Fragen ---------- */
 details{background:var(--papier); border-radius:var(--r-m); margin-top:11px;
         overflow:hidden; box-shadow:0 2px 10px var(--schatten)}
 summary{cursor:pointer; list-style:none; padding:17px 22px; font-family:var(--titel);
@@ -219,7 +215,6 @@ summary::after{content:"+"; font-size:1.5rem; color:var(--orange); line-height:1
 details[open] summary::after{transform:rotate(45deg)}
 .antwort{padding:0 22px 19px; color:var(--tief-weich)}
 
-/* ---------- Fuß ---------- */
 footer.site{background:var(--himmel-hell); padding-block:46px 54px;
             font-size:.9rem; color:var(--tief-weich); margin-top:20px}
 .recht{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:28px}
@@ -236,8 +231,8 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
 <body>
 
 <div class="hinweis">
-  Vorschau — <b>Impressum, E-Mail-Adresse und der Text über den Autor</b> sind noch
-  Platzhalter. Nach dem Ausfüllen diese Zeile löschen.
+  Vorschau — <b>Impressum, E-Mail-Adresse, Autorentext</b> und die
+  <b>Altersangabe des Wimmelbuchs</b> sind noch offen. Danach diese Zeile löschen.
 </div>
 
 <header class="site">
@@ -247,123 +242,172 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
       <span>Kreativ Dschungel</span>
     </a>
     <nav class="haupt" aria-label="Hauptnavigation">
-      <a href="#buch">Das Buch</a>
-      <a href="#blick">Blick ins Buch</a>
-      <a href="#fuerwen">Für wen</a>
+      <a href="#walddorf">Wimmelbuch</a>
+      <a href="#tierkinder">Malbuch</a>
+      <a href="#anlaesse">Für wen</a>
       <a href="#autor">Über mich</a>
       <a href="#fragen">Fragen</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <a class="knopf" href="https://www.amazon.de/dp/B0HKYQXX5G" target="_blank" rel="noopener">Bei Amazon<i> ansehen</i></a>
+    <a class="knopf gruen" href="#walddorf">Zu den Büchern</a>
   </div>
 </header>
 
 <main id="oben">
 
 <section class="hero">
-  <span class="wolke w1"></span><span class="wolke w2"></span><span class="wolke w3"></span>
+  <span class="wolke w1"></span><span class="wolke w2"></span>
   <div class="wrap hero-raster">
     <div>
-      <p class="kicker">Malbuch ab 4 Jahren</p>
-      <h1>Tierkinder <span class="ton">entdecken Berufe</span></h1>
-      <p class="unterzeile">Kleine Tiere, große Träume</p>
-      <p class="lead">Vierzig Ausmalbilder von Tierkindern in ihrem Traumberuf: der Kater als Bäcker, der Elefant auf der Baustelle, der Tiger im Cockpit. Große Flächen, kräftige Linien — gemacht für Hände, die das Ausmalen gerade erst lernen.</p>
+      <p class="kicker">Zwei Bücher für Kinder</p>
+      <h1>Bücher, die Kinder <span class="ton">selbst entdecken</span></h1>
+      <p class="lead">Ein Weihnachts-Wimmelbuch zum Suchen und Erzählen und ein Malbuch mit vierzig Berufen zum Ausmalen. Beide von Sebastian Mentzel, beide bei Amazon erhältlich — und beide so gemacht, dass Kinder damit allein etwas anfangen können.</p>
       <div class="tasten">
-        <a class="knopf" href="https://www.amazon.de/dp/B0HKYQXX5G" target="_blank" rel="noopener">Bei Amazon ansehen</a>
-        <a class="knopf zweit" href="#blick">Blick ins Buch</a>
+        <a class="knopf gruen" href="#walddorf">Das Wimmelbuch</a>
+        <a class="knopf" href="#tierkinder">Das Malbuch</a>
       </div>
-      <ul class="fakten">
-        <li>40 Ausmalbilder</li>
-        <li>Ab 4 Jahren</li>
-        <li>21,6 × 27,9 cm</li>
-        <li>Einseitig bedruckt</li>
-      </ul>
     </div>
-    <div>
-      <img class="coverbild" src="bilder/cover-tierkinder.jpg" width="900" height="1165"
-           alt="Cover: Katze als Bäckerin, Hund als Feuerwehrmann, Elefant als Bauarbeiter, Reh als Floristin und Affe als Astronaut auf einer Wiese">
+    <div class="zweibuch">
+      <a href="#walddorf">
+        <img src="bilder/cover-walddorf.jpg" width="760" height="760" alt="Cover: Weihnachten im kleinen Walddorf — verschneites Dorf mit Fuchs, Maus, Igel und geschmücktem Weihnachtsbaum">
+        <span>Wimmelbuch</span>
+      </a>
+      <a href="#tierkinder">
+        <img src="bilder/cover-tierkinder.jpg" width="900" height="1165" alt="Cover: Tierkinder entdecken Berufe — Katze als Bäckerin, Hund als Feuerwehrmann, Elefant als Bauarbeiter">
+        <span>Malbuch</span>
+      </a>
     </div>
   </div>
 </section>
 
-<section id="buch">
+<!-- ======================= WIMMELBUCH ======================= -->
+<section class="buch walddorf" id="walddorf">
   <div class="wrap">
-    <p class="kicker">Das Buch</p>
-    <h2>Vier Dinge, die beim Ausmalen den Unterschied machen</h2>
-    <p class="lead">Ein Malbuch für Vierjährige muss anders gebaut sein als eines für Zehnjährige. Darauf ist dieses hier ausgelegt.</p>
+    <div class="buch-kopf">
+      <img class="cover" src="bilder/cover-walddorf.jpg" width="760" height="760"
+           alt="Cover: Weihnachten im kleinen Walddorf, Mein Weihnachts-Wimmelbuch">
+      <div>
+        <p class="kicker" style="color:var(--rot)">Wimmelbuch · Entdecken, Suchen, Erzählen</p>
+        <h2>Weihnachten im kleinen Walddorf</h2>
+        <p class="reihe">Mein Weihnachts-Wimmelbuch</p>
+        <p class="lead" style="margin-top:16px">Ein ganzes Dorf freut sich auf Weihnachten. In der Bäckerei duftet es nach Plätzchen, in der Werkstatt entstehen Geschenke, und auf dem Dorfplatz wartet ein großer Weihnachtsbaum. Acht winterliche Wimmelbilder voller kleiner Geschichten — mit Suchfragen auf jeder Seite und einer eigenen Malidee am Schluss.</p>
+        <ul class="merkmale">
+          <li>8 Wimmelbilder</li>
+          <li>21,6 × 21,6 cm</li>
+          <li>Mit Suchfragen</li>
+          <li>Ab 2 Jahren</li>
+        </ul>
+        <p style="margin-top:14px; font-size:.86rem"><span class="fuell">[Altersangabe prüfen: Die Rückseite nennt „ab 2 Jahren“, die Titelseite im Buch „ab 4 Jahren“. Bitte vereinheitlichen — hier, im Buch und bei Amazon.]</span></p>
+        <div class="tasten">
+          <a class="knopf gruen" href="https://www.amazon.de/dp/B0HL3NRJ7P" target="_blank" rel="noopener">Bei Amazon ansehen</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.3rem; margin-top:46px">Drei Freunde führen durch das Dorf</h3>
+    <div class="karten">
+      <div class="karte">
+        <h3>Fips, der Fuchs</h3>
+        <p>Am türkisfarbenen Mantel und am gelben Schal zu erkennen. Er läuft durch alle acht Bilder — und ist nicht immer leicht zu finden.</p>
+      </div>
+      <div class="karte">
+        <h3>Milla, die Maus</h3>
+        <p>Rotes Kleid, helle Schürze. Sie bringt gern etwas Leckeres mit, meistens frisch aus der Bäckerei.</p>
+      </div>
+      <div class="karte">
+        <h3>Pip, das Rotkehlchen</h3>
+        <p>Klein, mit roter Brust, und selten dort, wo man zuerst schaut. Auf jeder Doppelseite sitzt er woanders.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.3rem; margin-top:46px">Vier von acht Bildern</h3>
+    <div class="szenen">
+      <figure><img src="bilder/wimmel-1.jpg" width="1000" height="500" loading="lazy" alt="Wimmelbild: verschneiter Dorfplatz mit Häusern, Tannen und spielenden Tieren"><figcaption>Der Dorfplatz</figcaption></figure>
+      <figure><img src="bilder/wimmel-2.jpg" width="1000" height="500" loading="lazy" alt="Wimmelbild: Werkstatt voller Werkzeuge, Geschenke und arbeitender Tiere"><figcaption>Die Werkstatt</figcaption></figure>
+      <figure><img src="bilder/wimmel-3.jpg" width="1000" height="500" loading="lazy" alt="Wimmelbild: Weihnachtsmarkt mit beleuchteten Buden und Besuchern"><figcaption>Der Weihnachtsmarkt</figcaption></figure>
+      <figure><img src="bilder/wimmel-4.jpg" width="1000" height="500" loading="lazy" alt="Wimmelbild: verschneiter Winterwald mit Rehen, Füchsen und Schlitten"><figcaption>Der Winterwald</figcaption></figure>
+    </div>
+    <div class="szenen" style="margin-top:16px">
+      <figure><img src="bilder/wimmel-5.jpg" width="760" height="760" loading="lazy" alt="Wimmelbild: Backstube mit Bär, Igel und Hasen beim Plätzchenbacken am Ofen"><figcaption>Die Backstube</figcaption></figure>
+      <figure><img src="bilder/wimmel-6.jpg" width="760" height="760" loading="lazy" alt="Wimmelbild: Dorfladen mit Regalen voller Waren, Fuchs und Dachs im Eingang"><figcaption>Der Dorfladen</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= MALBUCH ======================= -->
+<section class="buch" id="tierkinder">
+  <div class="wrap">
+    <div class="buch-kopf">
+      <img class="cover" src="bilder/cover-tierkinder.jpg" width="900" height="1165"
+           alt="Cover: Tierkinder entdecken Berufe, Malbuch ab 4 Jahren">
+      <div>
+        <p class="kicker">Malbuch ab 4 Jahren</p>
+        <h2>Tierkinder entdecken Berufe</h2>
+        <p class="reihe">Kleine Tiere, große Träume</p>
+        <p class="lead" style="margin-top:16px">Vierzig Ausmalbilder von Tierkindern in ihrem Traumberuf: die Katze als Bäckerin, der Elefant auf der Baustelle, der Tiger im Cockpit, der Affe als Astronaut. Große Flächen und kräftige Linien — gemacht für Hände, die das Ausmalen gerade erst lernen.</p>
+        <ul class="merkmale">
+          <li>40 Ausmalbilder</li>
+          <li>Ab 4 Jahren</li>
+          <li>21,6 × 27,9 cm</li>
+          <li>Einseitig bedruckt</li>
+        </ul>
+        <div class="tasten">
+          <a class="knopf" href="https://www.amazon.de/dp/B0HKYQXX5G" target="_blank" rel="noopener">Bei Amazon ansehen</a>
+        </div>
+      </div>
+    </div>
 
     <div class="karten">
       <div class="karte">
-        <div class="zeichen" style="background:#FDE8DD">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#CE5F35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-        </div>
         <h3>Große Flächen</h3>
-        <p>Keine Schraffuren, keine Mini-Details. Die Formen sind so groß, dass ein Stift auch dann im Feld bleibt, wenn die Hand noch wackelt.</p>
+        <p>Keine Schraffuren, keine Mini-Details. Die Formen sind so groß, dass der Stift auch dann im Feld bleibt, wenn die Hand noch wackelt.</p>
       </div>
       <div class="karte">
-        <div class="zeichen" style="background:#E3EFD2">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#7A9440" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        </div>
         <h3>Einseitig bedruckt</h3>
         <p>Jedes Motiv hat seine eigene Seite, die Rückseite bleibt leer. Drückt ein Filzstift durch, ist kein zweites Bild ruiniert.</p>
       </div>
       <div class="karte">
-        <div class="zeichen" style="background:#DCEDF5">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1A3F57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <h3>Großes Format</h3>
-        <p>21,6 × 27,9 cm — deutlich größer als ein Schulheft. Mehr Platz für Arme, die beim Malen gern ausholen.</p>
-      </div>
-      <div class="karte">
-        <div class="zeichen" style="background:#FAF0D4">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#B89426" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
-        </div>
         <h3>Vierzig Berufe</h3>
         <p>Vom Bäcker über die Feuerwehr bis zur Raumfahrt. Jedes Bild zeigt einen Beruf mit seinem Werkzeug — und gibt beim Ausmalen etwas zu erzählen.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="blick" style="background:var(--himmel-hell)">
-  <div class="wrap">
-    <p class="kicker">Blick ins Buch</p>
-    <h2>Sechs von vierzig Seiten</h2>
-    <p class="lead">So sehen die Bilder aus, bevor die Stifte kommen.</p>
-    <div class="galerie">
+    <h3 style="font-size:1.3rem; margin-top:46px">Sechs von vierzig Seiten</h3>
+    <div class="motive">
       <figure><img src="bilder/ausmalbild-1.png" width="760" height="991" loading="lazy" alt="Ausmalbild: Katze als Bäckerin mit Brot vor dem Backofen"><figcaption>Die Bäckerin</figcaption></figure>
       <figure><img src="bilder/ausmalbild-2.png" width="760" height="991" loading="lazy" alt="Ausmalbild: Hase als Gärtner mit Gießkanne im Blumenbeet"><figcaption>Der Gärtner</figcaption></figure>
-      <figure><img src="bilder/ausmalbild-3.png" width="760" height="991" loading="lazy" alt="Ausmalbild: Elefant als Bauarbeiter mit Schaufel, Bagger und Ziegelsteinen"><figcaption>Der Bauarbeiter</figcaption></figure>
+      <figure><img src="bilder/ausmalbild-3.png" width="760" height="991" loading="lazy" alt="Ausmalbild: Elefant als Bauarbeiter mit Schaufel und Bagger"><figcaption>Der Bauarbeiter</figcaption></figure>
       <figure><img src="bilder/ausmalbild-4.png" width="760" height="991" loading="lazy" alt="Ausmalbild: Tiger als Pilot mit Klemmbrett vor einem Flugzeug"><figcaption>Der Pilot</figcaption></figure>
-      <figure><img src="bilder/ausmalbild-5.png" width="760" height="991" loading="lazy" alt="Ausmalbild: Löwe als Friseur mit Kamm und Schere am Friseurstuhl"><figcaption>Der Friseur</figcaption></figure>
+      <figure><img src="bilder/ausmalbild-5.png" width="760" height="991" loading="lazy" alt="Ausmalbild: Löwe als Friseur mit Kamm und Schere"><figcaption>Der Friseur</figcaption></figure>
       <figure><img src="bilder/ausmalbild-6.png" width="760" height="991" loading="lazy" alt="Ausmalbild: Bär als Koch mit Kochlöffel am Herd"><figcaption>Der Koch</figcaption></figure>
     </div>
   </div>
 </section>
 
-<section id="fuerwen">
+<section id="anlaesse" style="background:var(--himmel-hell)">
   <div class="wrap">
     <p class="kicker">Für wen</p>
-    <h2>Wann ein Malbuch gerade richtig ist</h2>
-    <p class="lead">Ausmalen beschäftigt Kinder lange, ohne Bildschirm und ohne Anleitung. Besonders gut passt dieses Buch hier:</p>
+    <h2>Wann die Bücher gerade richtig sind</h2>
+    <p class="lead">Beide beschäftigen Kinder ohne Bildschirm und ohne Anleitung — das Wimmelbuch im Sitzen zu zweit, das Malbuch auch allein.</p>
     <ul class="anlaesse">
+      <li>Adventszeit</li>
+      <li>Nikolausstiefel</li>
+      <li>Weihnachtsgeschenk</li>
       <li>Kindergeburtstag</li>
       <li>Mitbringsel</li>
       <li>Kita und Vorschule</li>
       <li>Lange Autofahrt</li>
       <li>Regennachmittag</li>
-      <li>Wartezimmer</li>
-      <li>Ostern und Nikolaus</li>
     </ul>
-    <p style="margin-top:28px; max-width:62ch; color:var(--tief-weich)">
-      Das Thema Berufe bringt beim Ausmalen Gespräche in Gang: Was macht ein Bauarbeiter
-      eigentlich den ganzen Tag? Was möchtest du einmal werden? Genau diese Frage steht
-      auch auf der Rückseite des Buches.
+    <p style="margin-top:26px; max-width:62ch; color:var(--tief-weich)">
+      Beide Bücher bringen Gespräche in Gang. Beim Wimmelbuch über das, was auf den
+      Bildern passiert — beim Malbuch über die Frage, die auf der Rückseite steht:
+      Was möchtest du einmal werden?
     </p>
   </div>
 </section>
 
-<section id="autor" style="background:var(--himmel-hell)">
+<section id="autor">
   <div class="wrap autor">
     <div class="bild">
       <img src="bilder/titelseite.png" width="760" height="991" loading="lazy"
@@ -373,53 +417,53 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
       <p class="kicker">Über mich</p>
       <h2>Sebastian Mentzel</h2>
       <p class="lead" style="margin-top:16px">
-        <span class="fuell">[Hier dein Text: Wer bist du, wie kam es zum ersten Malbuch, was
-        magst du an der Arbeit daran? Zwei kurze Absätze reichen völlig. Eltern kaufen eher,
-        wenn hinter dem Buch eine Person steht statt einer Marke — konkret werden schlägt
+        <span class="fuell">[Hier dein Text: Wer bist du, wie kam es zum ersten Buch, was
+        magst du an der Arbeit daran? Zwei kurze Absätze reichen. Eltern kaufen eher, wenn
+        hinter dem Buch eine Person steht statt einer Marke — konkret werden schlägt
         Lebenslauf.]</span>
       </p>
       <p style="margin-top:14px; color:var(--tief-weich)">
-        <span class="fuell">[Zweiter Absatz: Woher die Tierfiguren stammen, wer Probe
-        malt, was als Nächstes kommt.]</span>
+        <span class="fuell">[Zweiter Absatz: Woher die Figuren stammen, wer gegenliest oder
+        probemalt, was als Nächstes kommt.]</span>
       </p>
       <div class="tasten"><a class="knopf zweit" href="#kontakt">Kontakt aufnehmen</a></div>
     </div>
   </div>
 </section>
 
-<section id="fragen">
+<section id="fragen" style="background:var(--himmel-hell)">
   <div class="wrap">
     <p class="kicker">Häufige Fragen</p>
     <h2>Kurz beantwortet</h2>
 
     <details>
-      <summary>Ab welchem Alter passt das Buch?</summary>
-      <div class="antwort">Ab vier Jahren. Die Flächen sind groß und die Linien kräftig, damit auch jüngere Kinder zurechtkommen. Nach oben ist nichts begrenzt — ältere Kinder malen dieselben Motive einfach genauer aus.</div>
+      <summary>Ab welchem Alter passen die Bücher?</summary>
+      <div class="antwort">Das Malbuch ab vier Jahren — die Flächen sind groß und die Linien kräftig genug für Kindergartenkinder. Das Wimmelbuch funktioniert schon früher, wenn ein Erwachsener mitschaut und die Suchfragen vorliest. <span class="fuell">[Hier die endgültige Altersangabe des Wimmelbuchs eintragen.]</span></div>
     </details>
     <details>
-      <summary>Drücken Filzstifte durch?</summary>
-      <div class="antwort">Filzstifte drücken auf normalem Papier fast immer durch. Deshalb ist das Buch einseitig bedruckt: Die Rückseite jedes Motivs ist leer, ein durchgedrückter Stift ruiniert also kein zweites Bild. Für feine Ergebnisse sind Buntstifte und Wachsmaler trotzdem die bessere Wahl.</div>
+      <summary>Was ist eine Malidee im Wimmelbuch?</summary>
+      <div class="antwort">Am Ende des Buches steht eine Anregung zum Selbermalen, die an die Bilder anknüpft — so geht das Entdecken ins eigene Gestalten über, ohne dass ein zweites Buch nötig wäre.</div>
     </details>
     <details>
-      <summary>Welche Berufe kommen vor?</summary>
-      <div class="antwort">Vierzig verschiedene — unter anderem Bäckerei, Feuerwehr, Baustelle, Gärtnerei, Friseursalon, Küche, Cockpit und Raumfahrt. Jedes Tierkind trägt die passende Kleidung und hat sein Werkzeug dabei.</div>
+      <summary>Drücken Filzstifte im Malbuch durch?</summary>
+      <div class="antwort">Filzstifte drücken auf normalem Papier fast immer durch. Deshalb ist das Malbuch einseitig bedruckt: Die Rückseite jedes Motivs ist leer, ein durchgedrückter Stift ruiniert also kein zweites Bild. Für feine Ergebnisse sind Buntstifte und Wachsmaler trotzdem die bessere Wahl.</div>
     </details>
     <details>
-      <summary>Wo kann ich das Buch kaufen?</summary>
-      <div class="antwort">Über Amazon — der Knopf auf dieser Seite führt direkt zur Produktseite. Bestellung, Versand und Rückgabe laufen vollständig dort; über diese Website wird nichts verkauft.</div>
+      <summary>Gehören die Bücher zu einer Reihe?</summary>
+      <div class="antwort">Beide erscheinen unter Kreativ Dschungel, erzählen aber eigene Geschichten und lassen sich unabhängig voneinander lesen. <span class="fuell">[Falls weitere Titel geplant sind, hier nennen.]</span></div>
     </details>
     <details>
-      <summary>Gibt es weitere Malbücher?</summary>
-      <div class="antwort"><span class="fuell">[Antwort eintragen — zum Beispiel: Ja, ein zweiter Band zum Thema Fahrzeuge erscheint im Frühjahr. Oder: Momentan ist das der einzige Titel.]</span></div>
+      <summary>Wo kann ich die Bücher kaufen?</summary>
+      <div class="antwort">Über Amazon — die Knöpfe auf dieser Seite führen direkt zur jeweiligen Produktseite. Bestellung, Versand und Rückgabe laufen vollständig dort; über diese Website wird nichts verkauft.</div>
     </details>
     <details>
-      <summary>Kann ich das Buch für meine Kita in größerer Stückzahl bestellen?</summary>
-      <div class="antwort"><span class="fuell">[Antwort eintragen — zum Beispiel: Auf Anfrage per Mail, ab zehn Exemplaren mit Rabatt.]</span></div>
+      <summary>Gibt es Mengenrabatt für Kitas?</summary>
+      <div class="antwort"><span class="fuell">[Antwort eintragen — zum Beispiel: Auf Anfrage per Mail, ab zehn Exemplaren.]</span></div>
     </details>
   </div>
 </section>
 
-<section id="kontakt" style="background:var(--himmel-hell)">
+<section id="kontakt">
   <div class="wrap">
     <p class="kicker">Kontakt</p>
     <h2>Fragen, Rezensionsexemplare, Kita-Anfragen</h2>
@@ -428,7 +472,7 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
       <code id="mailAdresse">post@kreativdschungel.de</code>
       <button class="knopf klein" id="kopieren" type="button">Adresse kopieren</button>
     </div>
-    <p style="margin-top:12px; font-size:.88rem; color:var(--tief-weich)">
+    <p style="margin-top:12px; font-size:.88rem">
       <span class="fuell">[Richtige Adresse eintragen — hier und unten im Impressum.]</span>
     </p>
   </div>
@@ -457,9 +501,10 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
         <p style="margin-top:8px">Die Schriften liegen auf dem eigenen Server. Es werden keine Google Fonts geladen.</p>
       </div>
       <div>
-        <h3>Buch und Links</h3>
-        <p>„Tierkinder entdecken Berufe — Kleine Tiere, große Träume“, Malbuch für Kinder ab 4 Jahren mit 40 Ausmalbildern.</p>
-        <p style="margin-top:8px">Der Kauf-Link führt zu Amazon.de. Bestellung und Abwicklung erfolgen dort; es gelten die Bedingungen von Amazon.</p>
+        <h3>Die Bücher</h3>
+        <p>„Weihnachten im kleinen Walddorf — Mein Weihnachts-Wimmelbuch“, acht Wimmelbilder mit Suchfragen.</p>
+        <p style="margin-top:6px">„Tierkinder entdecken Berufe — Kleine Tiere, große Träume“, Malbuch mit 40 Ausmalbildern ab 4 Jahren.</p>
+        <p style="margin-top:8px">Die Kauf-Links führen zu Amazon.de. Bestellung und Abwicklung erfolgen dort.</p>
         <p style="margin-top:8px"><span class="fuell">[Nur bei Partnerlinks, sonst löschen:]</span> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p>
         <p style="margin-top:8px">Cover und Illustrationen sind urheberrechtlich geschützt.</p>
       </div>
@@ -474,18 +519,35 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Book",
-  "name": "Tierkinder entdecken Berufe: Kleine Tiere, große Träume",
-  "alternateName": "Tierkinder entdecken Berufe – Malbuch für Kinder ab 4 Jahren mit 40 süßen Ausmalbildern",
-  "author": { "@type": "Person", "name": "Sebastian Mentzel" },
-  "inLanguage": "de",
-  "bookFormat": "https://schema.org/Paperback",
-  "typicalAgeRange": "4-8",
-  "genre": "Malbuch",
-  "image": "https://kreativdschungel.de/bilder/cover-tierkinder.jpg",
-  "url": "https://kreativdschungel.de/",
-  "sameAs": "https://www.amazon.de/dp/B0HKYQXX5G",
-  "publisher": { "@type": "Organization", "name": "Kreativ Dschungel" }
+  "@type": "ItemList",
+  "name": "Bücher von Kreativ Dschungel",
+  "itemListElement": [
+    {
+      "@type": "Book",
+      "position": 1,
+      "name": "Weihnachten im kleinen Walddorf: Mein Weihnachts-Wimmelbuch",
+      "author": { "@type": "Person", "name": "Sebastian Mentzel" },
+      "inLanguage": "de",
+      "bookFormat": "https://schema.org/Paperback",
+      "genre": "Wimmelbuch",
+      "image": "https://kreativdschungel.de/bilder/cover-walddorf.jpg",
+      "sameAs": "https://www.amazon.de/dp/B0HL3NRJ7P",
+      "publisher": { "@type": "Organization", "name": "Kreativ Dschungel" }
+    },
+    {
+      "@type": "Book",
+      "position": 2,
+      "name": "Tierkinder entdecken Berufe: Kleine Tiere, große Träume",
+      "author": { "@type": "Person", "name": "Sebastian Mentzel" },
+      "inLanguage": "de",
+      "bookFormat": "https://schema.org/Paperback",
+      "typicalAgeRange": "4-8",
+      "genre": "Malbuch",
+      "image": "https://kreativdschungel.de/bilder/cover-tierkinder.jpg",
+      "sameAs": "https://www.amazon.de/dp/B0HKYQXX5G",
+      "publisher": { "@type": "Organization", "name": "Kreativ Dschungel" }
+    }
+  ]
 }
 </script>
 

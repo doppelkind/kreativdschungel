@@ -1,42 +1,45 @@
 # kreativdschungel.de
 
-Statische Website für das Malbuch „Tierkinder entdecken Berufe“. Eine Seite,
-kein Build, kein Framework — die Dateien gehen so wie sie sind auf jeden Hoster.
+Statische Website für zwei Bücher von Sebastian Mentzel. Eine Seite, kein Build,
+kein Framework — die Dateien gehen so wie sie sind auf jeden Hoster.
+
+| Buch | ASIN |
+|---|---|
+| Weihnachten im kleinen Walddorf — Mein Weihnachts-Wimmelbuch | `B0HL3NRJ7P` |
+| Tierkinder entdecken Berufe — Kleine Tiere, große Träume | `B0HKYQXX5G` |
 
 ```
 index.html       die komplette Seite (Struktur, CSS, JavaScript)
 schriften.css    @font-face-Regeln für die lokalen Schriften
 fonts/           Baloo 2 + Nunito als woff2, 132 KB
-bilder/          Cover, Logo, sechs Ausmalbilder, Titelseite
+bilder/          zwei Cover, Logo, sechs Wimmelbilder, sechs Ausmalbilder
 vorschaubild.png 1200x630, erscheint beim Teilen in WhatsApp und Pinterest
-favicon.svg      Monstera-Blatt, das Icon im Browser-Tab
-robots.txt       erlaubt Suchmaschinen alles, verweist auf die Sitemap
-sitemap.xml      eine URL; bei weiteren Seiten hier ergänzen
-vercel.json      Caching für Schriften + drei Sicherheits-Header
+favicon.svg, robots.txt, sitemap.xml, vercel.json
 ```
 
-Cover, Ausmalbilder und Markenfarben stammen direkt aus den Druckdateien in
-`Desktop/Tierkinder`. Die Farben im `:root`-Block von `index.html` sind aus der
-Coverdatei ausgelesen, damit Website und Buch zusammenpassen.
+Alle Bilder stammen aus den Druckdateien in `Desktop/Tierkinder` und
+`Desktop/Wimmelbuch`. Die Farben im `:root`-Block sind aus beiden Covern
+ausgelesen: Titelblau und Orange vom Malbuch, Tannengrün und Rot vom
+Wimmelbuch. Jedes Buchkapitel trägt die Farben seines Covers.
 
 ## Vor dem Veröffentlichen ausfüllen
 
-Buchdaten, Titel, ASIN und Autorenname stehen bereits richtig drin. Offen ist nur
-noch das Persönliche und das Rechtliche:
+Titel, ASINs, Buchdaten und Autorenname stehen richtig drin. Offen ist:
 
-1. **Den dunklen Streifen oben in `index.html` löschen** (`<div class="hinweis">`).
-2. **E-Mail-Adresse** — steht an zwei Stellen: im Abschnitt Kontakt und im
-   Impressum. Derzeit `post@kreativdschungel.de` als Platzhalter.
-3. **Impressum**: Straße, PLZ und Ort sowie die Zeile zur Umsatzsteuer. Pflicht
-   nach § 5 DDG, sobald die Seite geschäftsmäßig ist. Ein fehlendes Impressum ist
-   der häufigste Abmahngrund bei kleinen Websites.
-4. **Text über dich** im Abschnitt „Über mich“ — zwei kurze Absätze.
-5. **Zwei offene Antworten** im Frageteil: weitere Malbücher und Kita-Mengen.
-6. **Hoster im Datenschutz** eintragen, sobald entschieden ist, wo die Seite liegt.
-7. **Pinterest-Code** in `<meta name="p:domain_verify">`, sobald die Seite live ist.
+1. **Altersangabe des Wimmelbuchs klären.** Die Rückseite nennt „ab 2 Jahren“,
+   die Titelseite im Buch „ab 4 Jahren“. Das widerspricht sich und steht auch
+   bei Amazon. Entscheiden, dann an allen drei Stellen vereinheitlichen.
+2. **Den dunklen Streifen oben in `index.html` löschen** (`<div class="hinweis">`).
+3. **E-Mail-Adresse** — an zwei Stellen: Abschnitt Kontakt und Impressum.
+4. **Impressum**: Straße, PLZ, Ort und die Zeile zur Umsatzsteuer. Pflicht nach
+   § 5 DDG, sobald die Seite geschäftsmäßig ist.
+5. **Text über dich** im Abschnitt „Über mich“ — zwei kurze Absätze.
+6. **Zwei offene Antworten** im Frageteil: weitere Titel und Kita-Mengen.
+7. **Hoster im Datenschutz**, sobald entschieden ist, wo die Seite liegt.
+8. **Pinterest-Code** in `<meta name="p:domain_verify">`, sobald die Seite live ist.
 
-Alle offenen Stellen sind im Quelltext mit `class="fuell"` ausgezeichnet und
-erscheinen auf der Seite orange.
+Alle offenen Stellen sind mit `class="fuell"` ausgezeichnet und erscheinen auf
+der Seite orange.
 
 ## Veröffentlichen
 
