@@ -1,0 +1,48 @@
+# Konfiguration für Apache-Webhosting (one.com). Falls der Server einen Block
+# nicht auswertet, wird er übersprungen statt die Seite mit Fehler 500
+# abzubrechen — jeder Abschnitt ist in <IfModule> gekapselt.
+
+AddDefaultCharset UTF-8
+Options -Indexes
+
+# --- Immer auf HTTPS umleiten ---------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# --- Dateitypen, die ältere Server nicht von sich aus kennen ---------------
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/svg+xml .svg
+</IfModule>
+
+# --- Komprimierung ---------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript image/svg+xml
+</IfModule>
+
+# --- Caching: Schriften und Bilder ändern sich nie, HTML immer -------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType font/woff2     "access plus 1 year"
+  ExpiresByType image/jpeg     "access plus 6 months"
+  ExpiresByType image/png      "access plus 6 months"
+  ExpiresByType image/svg+xml  "access plus 1 month"
+  ExpiresByType text/css       "access plus 1 week"
+  ExpiresByType text/html      "access plus 0 seconds"
+  ExpiresDefault               "access plus 1 day"
+</IfModule>
+
+# --- Sicherheits-Header ----------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# --- Einseitige Website: unbekannte Adressen zeigen die Startseite ---------
+ErrorDocument 404 /index.html

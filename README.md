@@ -46,60 +46,64 @@ Titel, ASINs, Buchdaten und Autorenname stehen richtig drin. Offen ist:
 Alle offenen Stellen sind mit `class="fuell"` ausgezeichnet und erscheinen auf
 der Seite orange.
 
-## Veröffentlichen
+## Veröffentlichen bei one.com
 
-Die Seite liegt auf GitHub und wird von Vercel automatisch veröffentlicht.
-Jeder Push auf `main` löst ein neues Deployment aus — ein eigener Upload-Schritt
-entfällt.
+Domain und Hosting liegen beide bei one.com, die Nameserver zeigen bereits
+dorthin (`ns01.one.com`, `ns02.one.com`, A-Record `46.30.211.38`). Es sind
+keine DNS-Einträge von Hand nötig.
 
-### Etwas ändern
+### Dateien hochladen
 
-```bash
-cd "/Users/sebastianmentzel/Desktop/Objektlupe/kreativdschungel-website"
-# Datei bearbeiten, dann:
-git add -A
-git commit -m "Klappentext von Band 2 überarbeitet"
-git push
+Im one.com-Kontrollpanel **Dateien → Datei-Manager** öffnen und in den
+Web-Ordner wechseln. Das ist der Ordner, in dem bereits eine Platzhalter-Seite
+von one.com liegt (meist `index.html` oder `default.html`) — die löschen.
+
+Dann den **Inhalt** dieses Projektordners hochladen, nicht den Ordner selbst:
+
+```
+index.html   schriften.css   favicon.svg   robots.txt
+sitemap.xml  vorschaubild.png   .htaccess
+fonts/   (4 Dateien)
+bilder/  (16 Dateien)
 ```
 
-Nach rund 30 Sekunden ist die Änderung live. Die Historie bleibt erhalten:
-`git log --oneline` zeigt alle Stände, `git revert <commit>` nimmt einen zurück.
+`index.html` muss direkt im Web-Ordner liegen. Liegt sie in einem Unterordner,
+ist die Seite unter `kreativdschungel.de/unterordner/` erreichbar statt unter
+der Hauptadresse.
 
-### Vorschau vor dem Livegang
+**Achtung bei `.htaccess`:** Der Punkt am Anfang macht sie zu einer versteckten
+Datei, manche Datei-Manager blenden sie aus. Falls sie fehlt, im Datei-Manager
+„versteckte Dateien anzeigen" einschalten.
 
-Für größere Änderungen einen Zweig nehmen:
+Alternativ mit FileZilla: Zugangsdaten stehen im Panel unter **Dateien →
+FTP-Zugang**, Server `ftp.kreativdschungel.de`.
 
-```bash
-git checkout -b neue-texte
-git push -u origin neue-texte
-```
+### HTTPS
 
-Vercel baut daraus eine eigene Vorschau-Adresse, die `kreativdschungel.de` nicht
-anfasst. Passt alles, den Zweig auf GitHub mergen — dann geht es live.
+one.com stellt ein kostenloses Zertifikat bereit. Im Panel unter **Sicherheit →
+SSL** prüfen, ob es aktiv ist. Erst danach greift die HTTPS-Umleitung in der
+`.htaccess` sinnvoll.
 
-### Lokal ansehen
+Test nach dem Hochladen: `kreativdschungel.de` ohne `https://` aufrufen. Springt
+die Adresszeile auf `https://`, greift die Datei. Wenn nicht, bietet one.com die
+Umleitung meist als Schalter im Panel an.
 
-```bash
-cd "/Users/sebastianmentzel/Desktop/Objektlupe/kreativdschungel-website" && python3 -m http.server 8788
-```
+### E-Mail-Postfach
 
-Dann `http://localhost:8788` im Browser öffnen. Über `file://` funktionieren die
-Schriften nicht, weil der Browser sie dort aus Sicherheitsgründen blockiert.
+Aktuell ist kein Postfach eingerichtet (kein MX-Eintrag). Im Panel unter
+**E-Mail** lässt sich `post@kreativdschungel.de` anlegen — das ist zugleich die
+Adresse, die ins Impressum gehört.
 
-## Domain verbinden
+## Nach dem Livegang
 
-`kreativdschungel.de` erst registrieren (Netcup, INWX, United Domains, IONOS —
-5–15 € im Jahr), dann im Vercel-Projekt unter **Settings → Domains** eintragen.
-Vercel zeigt daraufhin die Werte an, die beim Registrar gesetzt werden:
-
-| Typ | Name | Wert |
-|---|---|---|
-| A | `@` | `76.76.21.21` |
-| CNAME | `www` | `cname.vercel-dns.com` |
-
-Immer die Werte nehmen, die Vercel selbst anzeigt — sie können abweichen. Bis die
-Änderung greift, dauert es zehn Minuten bis 24 Stunden. Das TLS-Zertifikat stellt
-Vercel danach selbst aus.
+1. **Pinterest-Domain bestätigen**: Einstellungen → Beanspruchte Konten →
+   Website beanspruchen → HTML-Tag. Den Code statt
+   `HIER-DEN-CODE-VON-PINTEREST-EINSETZEN` eintragen, neu hochladen, bestätigen.
+2. **Rich Pins freischalten** über den URL-Debugger von Pinterest.
+3. **Pin-Ziele umstellen** von Amazon auf die Website (geht pro Pin, ohne ihn
+   neu anzulegen).
+4. **Google Search Console** einrichten und die Sitemap einreichen:
+   `https://kreativdschungel.de/sitemap.xml`
 
 ## Datenschutz
 
@@ -107,9 +111,8 @@ Die Seite lädt nichts von fremden Servern: Schriften liegen lokal, es gibt kein
 Cookies, keine Analyse, kein Kontaktformular. Dadurch braucht sie kein
 Cookie-Banner.
 
-Vercel ist als Hoster im Datenschutzabschnitt eingetragen. Zwei Dinge musst du
-dort noch erledigen: die Anschrift gegen Vercels eigene Datenschutzerklärung
-prüfen, und im Vercel-Konto den **Auftragsverarbeitungsvertrag** abschließen.
-Vercel sitzt in den USA — ohne diesen Vertrag fehlt die Rechtsgrundlage für die
-Übermittlung der Zugriffsdaten ins Drittland. Wenn du später Statistiken willst, nimm etwas ohne Cookies
+one.com ist als Hoster im Datenschutzabschnitt eingetragen. Die Firma sitzt in
+Dänemark, also innerhalb der EU — der Absatz zur Drittlandsübermittlung entfällt
+damit. Zwei Dinge bleiben: die Anschrift gegen das Impressum von one.com prüfen
+und im Panel den **Auftragsverarbeitungsvertrag** abschließen. Wenn du später Statistiken willst, nimm etwas ohne Cookies
 (Plausible, Fathom) — sonst wird das Banner doch fällig.
