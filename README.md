@@ -46,59 +46,72 @@ Titel, ASINs, Buchdaten und Autorenname stehen richtig drin. Offen ist:
 Alle offenen Stellen sind mit `class="fuell"` ausgezeichnet und erscheinen auf
 der Seite orange.
 
-## Veröffentlichen bei one.com
+## Veröffentlichen
 
-Domain und Hosting liegen beide bei one.com, die Nameserver zeigen bereits
-dorthin (`ns01.one.com`, `ns02.one.com`, A-Record `46.30.211.38`). Es sind
-keine DNS-Einträge von Hand nötig.
+**Hosting: Netlify. Domain: one.com.** Der Code liegt auf GitHub, Netlify holt
+ihn von dort — jeder Push auf `main` veröffentlicht automatisch.
 
-### Dateien hochladen
+### Einmalig einzurichten
 
-Im one.com-Kontrollpanel **Dateien → Datei-Manager** öffnen und in den
-Web-Ordner wechseln. Das ist der Ordner, in dem bereits eine Platzhalter-Seite
-von one.com liegt (meist `index.html` oder `default.html`) — die löschen.
+Diesen Schritt kann nur du machen, weil dafür ein Konto angelegt wird:
 
-Dann den **Inhalt** dieses Projektordners hochladen, nicht den Ordner selbst:
+1. `app.netlify.com` öffnen → **Sign up with GitHub**. Kostenlos, keine
+   Zahlungsdaten. Netlify fragt nach Zugriff auf deine Repositories —
+   „Only select repositories" genügt, dort `kreativdschungel` auswählen.
+2. **Add new site → Import an existing project → GitHub →** `kreativdschungel`
+3. Build command leer lassen, Publish directory auf `.` setzen. Es gibt nichts
+   zu bauen, die Seite ist fertiges HTML.
+4. **Deploy.** Danach ist sie unter einer `…netlify.app`-Adresse erreichbar.
 
+### Domain verbinden
+
+Im Netlify-Projekt unter **Domain management → Add a domain** die Domain
+`kreativdschungel.de` eintragen. Netlify zeigt dann die DNS-Werte an. Die
+trägst du bei one.com unter **Domain → DNS Einstellungen** ein — in der Regel:
+
+| Typ | Name | Wert |
+|---|---|---|
+| A | `@` | die IP, die Netlify nennt |
+| CNAME | `www` | `dein-projekt.netlify.app` |
+
+Immer die Werte nehmen, die Netlify selbst anzeigt. Der bestehende A-Record auf
+`46.30.211.38` (one.coms Parkseite) wird dabei ersetzt. Bis die Änderung überall
+greift, dauert es zehn Minuten bis 24 Stunden. Das TLS-Zertifikat stellt Netlify
+danach automatisch aus.
+
+### Etwas ändern
+
+```bash
+cd "/Users/sebastianmentzel/Desktop/Objektlupe/kreativdschungel-website"
+git add -A
+git commit -m "Impressum ausgefüllt"
+git push
 ```
-index.html   schriften.css   favicon.svg   robots.txt
-sitemap.xml  vorschaubild.png   .htaccess
-fonts/   (4 Dateien)
-bilder/  (16 Dateien)
+
+Nach rund einer Minute ist es live. `git log --oneline` zeigt alle Stände,
+Netlify hält jede veröffentlichte Fassung vor und kann auf Knopfdruck
+zurückrollen.
+
+### Lokal ansehen
+
+```bash
+cd "/Users/sebastianmentzel/Desktop/Objektlupe/kreativdschungel-website" && python3 -m http.server 8788
 ```
 
-`index.html` muss direkt im Web-Ordner liegen. Liegt sie in einem Unterordner,
-ist die Seite unter `kreativdschungel.de/unterordner/` erreichbar statt unter
-der Hauptadresse.
-
-**Achtung bei `.htaccess`:** Der Punkt am Anfang macht sie zu einer versteckten
-Datei, manche Datei-Manager blenden sie aus. Falls sie fehlt, im Datei-Manager
-„versteckte Dateien anzeigen" einschalten.
-
-Alternativ mit FileZilla: Zugangsdaten stehen im Panel unter **Dateien →
-FTP-Zugang**, Server `ftp.kreativdschungel.de`.
-
-### HTTPS
-
-one.com stellt ein kostenloses Zertifikat bereit. Im Panel unter **Sicherheit →
-SSL** prüfen, ob es aktiv ist. Erst danach greift die HTTPS-Umleitung in der
-`.htaccess` sinnvoll.
-
-Test nach dem Hochladen: `kreativdschungel.de` ohne `https://` aufrufen. Springt
-die Adresszeile auf `https://`, greift die Datei. Wenn nicht, bietet one.com die
-Umleitung meist als Schalter im Panel an.
+Dann `http://localhost:8788` aufrufen. Über `file://` funktionieren die
+Schriften nicht, weil der Browser sie dort blockiert.
 
 ### E-Mail-Postfach
 
-Aktuell ist kein Postfach eingerichtet (kein MX-Eintrag). Im Panel unter
-**E-Mail** lässt sich `post@kreativdschungel.de` anlegen — das ist zugleich die
-Adresse, die ins Impressum gehört.
+Es gibt noch keines (kein MX-Eintrag). Zwei Möglichkeiten: bei one.com unter
+**E-Mail** ein Postfach `post@kreativdschungel.de` dazubuchen, oder vorerst eine
+bestehende Adresse ins Impressum schreiben. Rechtlich reicht beides.
 
 ## Nach dem Livegang
 
 1. **Pinterest-Domain bestätigen**: Einstellungen → Beanspruchte Konten →
    Website beanspruchen → HTML-Tag. Den Code statt
-   `HIER-DEN-CODE-VON-PINTEREST-EINSETZEN` eintragen, neu hochladen, bestätigen.
+   `HIER-DEN-CODE-VON-PINTEREST-EINSETZEN` eintragen, pushen, bestätigen.
 2. **Rich Pins freischalten** über den URL-Debugger von Pinterest.
 3. **Pin-Ziele umstellen** von Amazon auf die Website (geht pro Pin, ohne ihn
    neu anzulegen).
@@ -111,8 +124,11 @@ Die Seite lädt nichts von fremden Servern: Schriften liegen lokal, es gibt kein
 Cookies, keine Analyse, kein Kontaktformular. Dadurch braucht sie kein
 Cookie-Banner.
 
-one.com ist als Hoster im Datenschutzabschnitt eingetragen. Die Firma sitzt in
-Dänemark, also innerhalb der EU — der Absatz zur Drittlandsübermittlung entfällt
-damit. Zwei Dinge bleiben: die Anschrift gegen das Impressum von one.com prüfen
-und im Panel den **Auftragsverarbeitungsvertrag** abschließen. Wenn du später Statistiken willst, nimm etwas ohne Cookies
+Netlify ist als Hoster im Datenschutzabschnitt eingetragen, die Domain bei
+one.com. Zwei Dinge bleiben zu erledigen: die genaue Anschrift von Netlify aus
+deren eigenem Impressum übernehmen — Firmenverzeichnisse nennen drei
+verschiedene — und den **Auftragsverarbeitungsvertrag** abschließen. Er ist Teil
+der Nutzungsbedingungen von Netlify; das unterschriebene Formular geht an
+privacy@netlify.com. Netlify sitzt in den USA, deshalb steht der Absatz zur
+Drittlandsübermittlung wieder in der Datenschutzerklärung. Wenn du später Statistiken willst, nimm etwas ohne Cookies
 (Plausible, Fathom) — sonst wird das Banner doch fällig.
