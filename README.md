@@ -7,12 +7,13 @@ kein Framework — die Dateien gehen so wie sie sind auf jeden Hoster.
 |---|---|
 | Weihnachten im kleinen Walddorf — Mein Weihnachts-Wimmelbuch | `B0HL3NRJ7P` |
 | Tierkinder entdecken Berufe — Kleine Tiere, große Träume | `B0HKYQXX5G` |
+| Das lustige Tier-Malbuch — 40 Motive von sportlichen Tieren | `B0H2L4VM4R` |
 
 ```
 index.html       die komplette Seite (Struktur, CSS, JavaScript)
 schriften.css    @font-face-Regeln für die lokalen Schriften
 fonts/           Baloo 2 + Nunito als woff2, 132 KB
-bilder/          zwei Cover, Logo, sechs Wimmelbilder, sechs Ausmalbilder
+bilder/          drei Cover, Logo, sechs Wimmelbilder, sechs Ausmalbilder
 vorschaubild.png 1200x630, erscheint beim Teilen in WhatsApp und Pinterest
 favicon.svg, robots.txt, sitemap.xml, vercel.json
 ```
@@ -26,17 +27,21 @@ Wimmelbuch. Jedes Buchkapitel trägt die Farben seines Covers.
 
 Titel, ASINs, Buchdaten und Autorenname stehen richtig drin. Offen ist:
 
-1. **Altersangabe des Wimmelbuchs klären.** Die Rückseite nennt „ab 2 Jahren“,
+1. **Innenseiten des Tier-Malbuchs nachliefern.** Für dieses Buch lag nur die
+   Coverdatei vor, deshalb fehlt dort der „Blick ins Buch“. Sobald die
+   Innenseiten-PDF da ist, lassen sich wie bei den anderen Büchern Motive
+   herausziehen.
+2. **Altersangabe des Wimmelbuchs klären.** Die Rückseite nennt „ab 2 Jahren“,
    die Titelseite im Buch „ab 4 Jahren“. Das widerspricht sich und steht auch
    bei Amazon. Entscheiden, dann an allen drei Stellen vereinheitlichen.
-2. **Den dunklen Streifen oben in `index.html` löschen** (`<div class="hinweis">`).
-3. **E-Mail-Adresse** — an zwei Stellen: Abschnitt Kontakt und Impressum.
-4. **Impressum**: Straße, PLZ, Ort und die Zeile zur Umsatzsteuer. Pflicht nach
+3. **Den dunklen Streifen oben in `index.html` löschen** (`<div class="hinweis">`).
+4. **E-Mail-Adresse** — an zwei Stellen: Abschnitt Kontakt und Impressum.
+5. **Impressum**: Straße, PLZ, Ort und die Zeile zur Umsatzsteuer. Pflicht nach
    § 5 DDG, sobald die Seite geschäftsmäßig ist.
-5. **Text über dich** im Abschnitt „Über mich“ — zwei kurze Absätze.
-6. **Zwei offene Antworten** im Frageteil: weitere Titel und Kita-Mengen.
-7. **Hoster im Datenschutz**, sobald entschieden ist, wo die Seite liegt.
-8. **Pinterest-Code** in `<meta name="p:domain_verify">`, sobald die Seite live ist.
+6. **Text über dich** im Abschnitt „Über mich“ — zwei kurze Absätze.
+7. **Zwei offene Antworten** im Frageteil: weitere Titel und Kita-Mengen.
+8. **Hoster im Datenschutz**, sobald entschieden ist, wo die Seite liegt.
+9. **Pinterest-Code** in `<meta name="p:domain_verify">`, sobald die Seite live ist.
 
 Alle offenen Stellen sind mit `class="fuell"` ausgezeichnet und erscheinen auf
 der Seite orange.

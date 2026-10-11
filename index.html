@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>Kreativ Dschungel — Wimmelbuch und Malbuch für Kinder</title>
-<meta name="description" content="Zwei Bücher von Sebastian Mentzel: ein Weihnachts-Wimmelbuch mit acht Suchbildern aus dem kleinen Walddorf und ein Malbuch mit 40 Ausmalbildern zum Thema Berufe. Blick ins Buch online.">
+<title>Kreativ Dschungel — Wimmelbuch und Malbücher für Kinder</title>
+<meta name="description" content="Drei Bücher von Sebastian Mentzel: ein Weihnachts-Wimmelbuch mit acht Suchbildern und zwei Malbücher mit je 40 Motiven — Berufe und sportliche Tiere. Für Kinder ab 4 Jahren.">
 <link rel="canonical" href="https://kreativdschungel.de/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Kreativ Dschungel">
-<meta property="og:title" content="Kreativ Dschungel — Wimmelbuch und Malbuch für Kinder">
-<meta property="og:description" content="Ein Weihnachts-Wimmelbuch aus dem kleinen Walddorf und ein Malbuch mit 40 Berufen. Mit Blick ins Buch.">
+<meta property="og:title" content="Kreativ Dschungel — Wimmelbuch und Malbücher für Kinder">
+<meta property="og:description" content="Ein Weihnachts-Wimmelbuch und zwei Malbücher mit je 40 Motiven. Für Kinder ab 4 Jahren.">
 <meta property="og:url" content="https://kreativdschungel.de/">
 <meta property="og:image" content="https://kreativdschungel.de/vorschaubild.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Die Cover beider Bücher: Weihnachten im kleinen Walddorf und Tierkinder entdecken Berufe">
+<meta property="og:image:alt" content="Die Cover der drei Bücher: Weihnachten im kleinen Walddorf, Tierkinder entdecken Berufe und Das lustige Tier-Malbuch">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Pinterest: Code aus Einstellungen → Beanspruchte Konten → Website beanspruchen -->
@@ -41,6 +41,7 @@
   --orange:#CE5F35; --himmel:#A9CDE5; --himmel-hell:#DCEDF5;
   --wiese:#AEC865; --gelb:#E8C457;
   --tanne:#1E3D28; --tanne-hell:#E3EBE1; --rot:#8C2828; --gold:#C9A227;
+  --sport:#5E8A2E; --sport-hell:#EDF3DF;
   --linie:#E4DECA; --schatten:rgba(26,63,87,.13);
 
   --titel:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
@@ -54,6 +55,7 @@
     --orange:#F08A5D; --himmel:#2C5468; --himmel-hell:#1B3A4B;
     --wiese:#8FB255; --gelb:#F0CF6B;
     --tanne:#8FC3A1; --tanne-hell:#17333A; --rot:#E08A80; --gold:#E3C76B;
+    --sport:#A8C96E; --sport-hell:#16303A;
     --linie:#2C5468; --schatten:rgba(0,0,0,.45);
     color-scheme:dark;
   }
@@ -63,6 +65,7 @@
   --orange:#F08A5D; --himmel:#2C5468; --himmel-hell:#1B3A4B;
   --wiese:#8FB255; --gelb:#F0CF6B;
   --tanne:#8FC3A1; --tanne-hell:#17333A; --rot:#E08A80; --gold:#E3C76B;
+  --sport:#A8C96E; --sport-hell:#16303A;
   --linie:#2C5468; --schatten:rgba(0,0,0,.45);
   color-scheme:dark;
 }
@@ -121,6 +124,9 @@ nav.haupt a:hover,nav.haupt a.aktiv{color:var(--tief); background:var(--himmel-h
 .knopf.gruen{background:var(--rot); box-shadow:0 4px 0 #5E1A1A, 0 8px 18px var(--schatten); color:#fff}
 .knopf.gruen:hover{box-shadow:0 6px 0 #5E1A1A, 0 12px 22px var(--schatten)}
 .knopf.gruen:active{box-shadow:0 2px 0 #5E1A1A}
+.knopf.gras{background:var(--sport); box-shadow:0 4px 0 #3D5C1C, 0 8px 18px var(--schatten); color:#fff}
+.knopf.gras:hover{box-shadow:0 6px 0 #3D5C1C, 0 12px 22px var(--schatten)}
+.knopf.gras:active{box-shadow:0 2px 0 #3D5C1C}
 .knopf.zweit{background:var(--papier); color:var(--tief);
              box-shadow:0 4px 0 var(--linie), 0 8px 18px var(--schatten)}
 .knopf.zweit:hover{box-shadow:0 6px 0 var(--linie), 0 12px 22px var(--schatten)}
@@ -144,18 +150,20 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .hero h1 .ton{color:var(--orange)}
 .hero p.lead{margin-top:16px; color:var(--tief); opacity:.88}
 .tasten{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
-.zweibuch{display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:end}
+.zweibuch{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:end}
 .zweibuch a{text-decoration:none; display:block}
 .zweibuch img{border-radius:8px; box-shadow:0 16px 34px rgba(26,63,87,.3); width:100%}
-.zweibuch a:nth-child(1) img{transform:rotate(-2.5deg)}
-.zweibuch a:nth-child(2) img{transform:rotate(2deg)}
-.zweibuch span{display:block; font-family:var(--titel); font-weight:600; font-size:.84rem;
+.zweibuch a:nth-child(1) img{transform:rotate(-3deg)}
+.zweibuch a:nth-child(2) img{transform:translateY(-10px) rotate(1deg)}
+.zweibuch a:nth-child(3) img{transform:rotate(3.5deg)}
+.zweibuch span{display:block; font-family:var(--titel); font-weight:600; font-size:.76rem;
                text-align:center; margin-top:14px; color:var(--tief)}
 @media (max-width:820px){ .hero-raster{grid-template-columns:1fr} }
 
 /* ---------- Buchkapitel ---------- */
 .buch{padding-block:clamp(54px,8vw,92px)}
 .buch.walddorf{background:var(--tanne-hell)}
+.buch.sport{background:var(--sport-hell)}
 .buch-kopf{display:grid; grid-template-columns:.78fr 1.22fr; gap:clamp(26px,4vw,52px); align-items:center}
 .buch-kopf img.cover{border-radius:8px; box-shadow:0 16px 36px rgba(26,63,87,.26)}
 .buch h2{font-size:clamp(1.8rem,4.2vw,2.7rem)}
@@ -243,7 +251,8 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
     </a>
     <nav class="haupt" aria-label="Hauptnavigation">
       <a href="#walddorf">Wimmelbuch</a>
-      <a href="#tierkinder">Malbuch</a>
+      <a href="#tierkinder">Berufe</a>
+      <a href="#tiermalbuch">Sport</a>
       <a href="#anlaesse">Für wen</a>
       <a href="#autor">Über mich</a>
       <a href="#fragen">Fragen</a>
@@ -259,22 +268,26 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
   <span class="wolke w1"></span><span class="wolke w2"></span>
   <div class="wrap hero-raster">
     <div>
-      <p class="kicker">Zwei Bücher für Kinder</p>
+      <p class="kicker">Drei Bücher für Kinder</p>
       <h1>Bücher, die Kinder <span class="ton">selbst entdecken</span></h1>
-      <p class="lead">Ein Weihnachts-Wimmelbuch zum Suchen und Erzählen und ein Malbuch mit vierzig Berufen zum Ausmalen. Beide von Sebastian Mentzel, beide bei Amazon erhältlich — und beide so gemacht, dass Kinder damit allein etwas anfangen können.</p>
+      <p class="lead">Ein Weihnachts-Wimmelbuch zum Suchen und Erzählen und zwei Malbücher mit je vierzig Motiven zum Ausmalen. Alle drei von Sebastian Mentzel, alle drei bei Amazon erhältlich — und alle so gemacht, dass Kinder damit allein etwas anfangen können.</p>
       <div class="tasten">
         <a class="knopf gruen" href="#walddorf">Das Wimmelbuch</a>
-        <a class="knopf" href="#tierkinder">Das Malbuch</a>
+        <a class="knopf" href="#tierkinder">Die Malbücher</a>
       </div>
     </div>
     <div class="zweibuch">
       <a href="#walddorf">
         <img src="bilder/cover-walddorf.jpg" width="760" height="760" alt="Cover: Weihnachten im kleinen Walddorf — verschneites Dorf mit Fuchs, Maus, Igel und geschmücktem Weihnachtsbaum">
-        <span>Wimmelbuch</span>
+        <span>Weihnachten</span>
       </a>
       <a href="#tierkinder">
         <img src="bilder/cover-tierkinder.jpg" width="900" height="1165" alt="Cover: Tierkinder entdecken Berufe — Katze als Bäckerin, Hund als Feuerwehrmann, Elefant als Bauarbeiter">
-        <span>Malbuch</span>
+        <span>Berufe</span>
+      </a>
+      <a href="#tiermalbuch">
+        <img src="bilder/cover-tiermalbuch.jpg" width="760" height="983" alt="Cover: Das lustige Tier-Malbuch — Pinguine im Bob, Elch auf Skiern, Schildkröte auf dem Surfbrett">
+        <span>Sport</span>
       </a>
     </div>
   </div>
@@ -384,11 +397,55 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
   </div>
 </section>
 
+<!-- ======================= SPORT-MALBUCH ======================= -->
+<section class="buch sport" id="tiermalbuch">
+  <div class="wrap">
+    <div class="buch-kopf">
+      <img class="cover" src="bilder/cover-tiermalbuch.jpg" width="760" height="983"
+           alt="Cover: Das lustige Tier-Malbuch, 40 Motive von sportlichen Tieren">
+      <div>
+        <p class="kicker" style="color:var(--sport)">Malbuch ab 4 Jahren</p>
+        <h2>Das lustige Tier-Malbuch</h2>
+        <p class="reihe">Sportlicher Malspaß für das ganze Jahr</p>
+        <p class="lead" style="margin-top:16px">Vierzig Tiere bei ihren verrückten Abenteuern durch Frühling, Sommer, Herbst und Winter. Die Giraffe beim Turmspringen, der Frosch beim Stabhochsprung, der Pinguin beim Bobfahren, die Maus beim Segeln — auf jeder Seite gibt es etwas zum Lachen und zum Ausmalen.</p>
+        <ul class="merkmale">
+          <li>40 Motive</li>
+          <li>Ab 4 Jahren</li>
+          <li>Vier Jahreszeiten</li>
+          <li>Einseitig bedruckt</li>
+        </ul>
+        <div class="tasten">
+          <a class="knopf gras" href="https://www.amazon.de/dp/B0H2L4VM4R" target="_blank" rel="noopener">Bei Amazon ansehen</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="karten">
+      <div class="karte">
+        <h3>Vier Jahreszeiten</h3>
+        <p>Die Motive sind nach Frühling, Sommer, Herbst und Winter geordnet. Nebenbei lernt sich, was im Jahr wann passiert — ohne dass es nach Lernen aussieht.</p>
+      </div>
+      <div class="karte">
+        <h3>Sport als Aufhänger</h3>
+        <p>Jedes Tier macht etwas: Skifahren, Surfen, Basketball, Segeln. Das gibt beim Ausmalen mehr zu bereden als ein Tier, das nur dasteht.</p>
+      </div>
+      <div class="karte">
+        <h3>Kein Durchdrücken</h3>
+        <p>Jedes Motiv liegt auf einem eigenen Blatt mit leerer Rückseite. Große Ausmalflächen, passend für Kinder ab vier.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:28px; font-size:.88rem">
+      <span class="fuell">[Innenseiten nachliefern, dann kommt hier ein „Blick ins Buch“ wie bei den anderen beiden Büchern. Für dieses Buch lag nur die Coverdatei vor.]</span>
+    </p>
+  </div>
+</section>
+
 <section id="anlaesse" style="background:var(--himmel-hell)">
   <div class="wrap">
     <p class="kicker">Für wen</p>
     <h2>Wann die Bücher gerade richtig sind</h2>
-    <p class="lead">Beide beschäftigen Kinder ohne Bildschirm und ohne Anleitung — das Wimmelbuch im Sitzen zu zweit, das Malbuch auch allein.</p>
+    <p class="lead">Alle drei beschäftigen Kinder ohne Bildschirm und ohne Anleitung — das Wimmelbuch im Sitzen zu zweit, die Malbücher auch allein.</p>
     <ul class="anlaesse">
       <li>Adventszeit</li>
       <li>Nikolausstiefel</li>
@@ -400,9 +457,10 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
       <li>Regennachmittag</li>
     </ul>
     <p style="margin-top:26px; max-width:62ch; color:var(--tief-weich)">
-      Beide Bücher bringen Gespräche in Gang. Beim Wimmelbuch über das, was auf den
-      Bildern passiert — beim Malbuch über die Frage, die auf der Rückseite steht:
-      Was möchtest du einmal werden?
+      Alle drei bringen Gespräche in Gang. Beim Wimmelbuch über das, was auf den
+      Bildern passiert, beim Berufe-Malbuch über die Frage von der Rückseite — was
+      möchtest du einmal werden? — und beim Sport-Malbuch darüber, welche Jahreszeit
+      gerade draußen ist.
     </p>
   </div>
 </section>
@@ -438,19 +496,19 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
 
     <details>
       <summary>Ab welchem Alter passen die Bücher?</summary>
-      <div class="antwort">Das Malbuch ab vier Jahren — die Flächen sind groß und die Linien kräftig genug für Kindergartenkinder. Das Wimmelbuch funktioniert schon früher, wenn ein Erwachsener mitschaut und die Suchfragen vorliest. <span class="fuell">[Hier die endgültige Altersangabe des Wimmelbuchs eintragen.]</span></div>
+      <div class="antwort">Beide Malbücher ab vier Jahren — die Flächen sind groß und die Linien kräftig genug für Kindergartenkinder. Das Wimmelbuch funktioniert schon früher, wenn ein Erwachsener mitschaut und die Suchfragen vorliest. <span class="fuell">[Hier die endgültige Altersangabe des Wimmelbuchs eintragen.]</span></div>
     </details>
     <details>
       <summary>Was ist eine Malidee im Wimmelbuch?</summary>
       <div class="antwort">Am Ende des Buches steht eine Anregung zum Selbermalen, die an die Bilder anknüpft — so geht das Entdecken ins eigene Gestalten über, ohne dass ein zweites Buch nötig wäre.</div>
     </details>
     <details>
-      <summary>Drücken Filzstifte im Malbuch durch?</summary>
-      <div class="antwort">Filzstifte drücken auf normalem Papier fast immer durch. Deshalb ist das Malbuch einseitig bedruckt: Die Rückseite jedes Motivs ist leer, ein durchgedrückter Stift ruiniert also kein zweites Bild. Für feine Ergebnisse sind Buntstifte und Wachsmaler trotzdem die bessere Wahl.</div>
+      <summary>Drücken Filzstifte in den Malbüchern durch?</summary>
+      <div class="antwort">Filzstifte drücken auf normalem Papier fast immer durch. Deshalb sind beide Malbücher einseitig bedruckt: Die Rückseite jedes Motivs ist leer, ein durchgedrückter Stift ruiniert also kein zweites Bild. Für feine Ergebnisse sind Buntstifte und Wachsmaler trotzdem die bessere Wahl.</div>
     </details>
     <details>
       <summary>Gehören die Bücher zu einer Reihe?</summary>
-      <div class="antwort">Beide erscheinen unter Kreativ Dschungel, erzählen aber eigene Geschichten und lassen sich unabhängig voneinander lesen. <span class="fuell">[Falls weitere Titel geplant sind, hier nennen.]</span></div>
+      <div class="antwort">Alle drei erscheinen unter Kreativ Dschungel, sind aber in sich abgeschlossen und lassen sich unabhängig voneinander nutzen. <span class="fuell">[Falls weitere Titel geplant sind, hier nennen.]</span></div>
     </details>
     <details>
       <summary>Wo kann ich die Bücher kaufen?</summary>
@@ -504,6 +562,7 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
         <h3>Die Bücher</h3>
         <p>„Weihnachten im kleinen Walddorf — Mein Weihnachts-Wimmelbuch“, acht Wimmelbilder mit Suchfragen.</p>
         <p style="margin-top:6px">„Tierkinder entdecken Berufe — Kleine Tiere, große Träume“, Malbuch mit 40 Ausmalbildern ab 4 Jahren.</p>
+        <p style="margin-top:6px">„Das lustige Tier-Malbuch“, 40 Motive von sportlichen Tieren durch die vier Jahreszeiten, ab 4 Jahren.</p>
         <p style="margin-top:8px">Die Kauf-Links führen zu Amazon.de. Bestellung und Abwicklung erfolgen dort.</p>
         <p style="margin-top:8px"><span class="fuell">[Nur bei Partnerlinks, sonst löschen:]</span> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p>
         <p style="margin-top:8px">Cover und Illustrationen sind urheberrechtlich geschützt.</p>
@@ -545,6 +604,19 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
       "genre": "Malbuch",
       "image": "https://kreativdschungel.de/bilder/cover-tierkinder.jpg",
       "sameAs": "https://www.amazon.de/dp/B0HKYQXX5G",
+      "publisher": { "@type": "Organization", "name": "Kreativ Dschungel" }
+    },
+    {
+      "@type": "Book",
+      "position": 3,
+      "name": "Das lustige Tier-Malbuch: 40 lustige Motive von sportlichen Tieren für Kinder ab 4 Jahren",
+      "author": { "@type": "Person", "name": "Sebastian Mentzel" },
+      "inLanguage": "de",
+      "bookFormat": "https://schema.org/Paperback",
+      "typicalAgeRange": "4-8",
+      "genre": "Malbuch",
+      "image": "https://kreativdschungel.de/bilder/cover-tiermalbuch.jpg",
+      "sameAs": "https://www.amazon.de/dp/B0H2L4VM4R",
       "publisher": { "@type": "Organization", "name": "Kreativ Dschungel" }
     }
   ]
