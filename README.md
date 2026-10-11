@@ -1,38 +1,42 @@
 # kreativdschungel.de
 
-Statische Website, eine Seite. Kein Build, kein Framework — die Dateien gehen
-so wie sie sind auf jeden Hoster.
+Statische Website für das Malbuch „Tierkinder entdecken Berufe“. Eine Seite,
+kein Build, kein Framework — die Dateien gehen so wie sie sind auf jeden Hoster.
 
 ```
 index.html       die komplette Seite (Struktur, CSS, JavaScript)
 schriften.css    @font-face-Regeln für die lokalen Schriften
-fonts/           Literata + Shantell Sans als woff2, 350 KB
+fonts/           Baloo 2 + Nunito als woff2, 132 KB
+bilder/          Cover, Logo, sechs Ausmalbilder, Titelseite
+vorschaubild.png 1200x630, erscheint beim Teilen in WhatsApp und Pinterest
 favicon.svg      Monstera-Blatt, das Icon im Browser-Tab
 robots.txt       erlaubt Suchmaschinen alles, verweist auf die Sitemap
 sitemap.xml      eine URL; bei weiteren Seiten hier ergänzen
 vercel.json      Caching für Schriften + drei Sicherheits-Header
 ```
 
+Cover, Ausmalbilder und Markenfarben stammen direkt aus den Druckdateien in
+`Desktop/Tierkinder`. Die Farben im `:root`-Block von `index.html` sind aus der
+Coverdatei ausgelesen, damit Website und Buch zusammenpassen.
+
 ## Vor dem Veröffentlichen ausfüllen
 
-1. **Den schwarzen Streifen oben in `index.html` löschen** (`<div class="demo-bar">`).
-2. **Amazon-Links**: fünfmal `ASIN-HIER-EINSETZEN` ersetzen. Die ASIN steht auf
-   der Amazon-Produktseite unter „Produktinformationen“.
-3. **Buchdaten**: Titel, Klappentexte, Altersangaben, Seitenzahlen in den drei
-   `<article class="book">`-Blöcken.
-4. **Leseprobe**: der Text steht zweimal drin — sichtbar im `<div class="spread">`
-   und im Array `doppelseiten` unten im `<script>`. Beide anpassen.
-5. **Impressum**: alle `[eckigen Klammern]` im `<footer>`. Pflicht nach § 5 DDG,
-   sobald die Seite geschäftsmäßig ist. Fehlendes Impressum ist der häufigste
-   Abmahngrund bei kleinen Websites.
-6. **Hoster im Datenschutz** eintragen (Name und Anschrift des Anbieters).
-7. **Cover**: `<svg class="cover">…</svg>` durch `<img class="cover" src="cover-1.jpg" alt="…">`
-   ersetzen, sobald echte Cover vorliegen.
-8. **Rezensionen**: die drei gestrichelten Platzhalter in `#stimmen` entweder mit
-   echten Zitaten füllen oder die ganze Sektion löschen. Erfundene Bewertungen
-   sind nach § 5 UWG unzulässig.
-9. **`vorschaubild.png`** anlegen (1200 × 630 px) — das Bild, das beim Teilen in
-   WhatsApp oder Facebook erscheint. Ohne diese Datei bleibt die Vorschau leer.
+Buchdaten, Titel, ASIN und Autorenname stehen bereits richtig drin. Offen ist nur
+noch das Persönliche und das Rechtliche:
+
+1. **Den dunklen Streifen oben in `index.html` löschen** (`<div class="hinweis">`).
+2. **E-Mail-Adresse** — steht an zwei Stellen: im Abschnitt Kontakt und im
+   Impressum. Derzeit `post@kreativdschungel.de` als Platzhalter.
+3. **Impressum**: Straße, PLZ und Ort sowie die Zeile zur Umsatzsteuer. Pflicht
+   nach § 5 DDG, sobald die Seite geschäftsmäßig ist. Ein fehlendes Impressum ist
+   der häufigste Abmahngrund bei kleinen Websites.
+4. **Text über dich** im Abschnitt „Über mich“ — zwei kurze Absätze.
+5. **Zwei offene Antworten** im Frageteil: weitere Malbücher und Kita-Mengen.
+6. **Hoster im Datenschutz** eintragen, sobald entschieden ist, wo die Seite liegt.
+7. **Pinterest-Code** in `<meta name="p:domain_verify">`, sobald die Seite live ist.
+
+Alle offenen Stellen sind im Quelltext mit `class="fuell"` ausgezeichnet und
+erscheinen auf der Seite orange.
 
 ## Veröffentlichen
 
