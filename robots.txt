@@ -1,11 +1,4 @@
-# VORÜBERGEHEND GESPERRT, solange das Impressum unvollständig ist.
-# Sobald Anschrift und E-Mail-Adresse eingetragen sind, diese Datei durch
-# den unteren Block ersetzen und erneut hochladen.
 User-agent: *
-Disallow: /
+Allow: /
 
-# --- Nach dem Ausfüllen des Impressums verwenden: ---
-# User-agent: *
-# Allow: /
-#
-# Sitemap: https://kreativdschungel.de/sitemap.xml
+Sitemap: https://kreativdschungel.de/sitemap.xml
