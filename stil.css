@@ -183,6 +183,26 @@ summary::after{content:"+"; font-size:1.5rem; color:var(--orange); line-height:1
 details[open] summary::after{transform:rotate(45deg)}
 .antwort{padding:0 22px 19px; color:var(--tief-weich)}
 
+/* Buchabschnitte: unter dem Buchkopf steckt alles hinter einem Aufklapper,
+   damit die drei Bücher auf den ersten Blick gleich viel Platz einnehmen.
+   Die globalen details-Regeln oben gelten der Fragen-Liste und werden hier
+   zurückgenommen. */
+.mehr{background:none; box-shadow:none; border-radius:0; overflow:visible;
+      margin-top:clamp(28px,4vw,42px)}
+.mehr>summary{display:inline-flex; width:auto; justify-content:flex-start; gap:12px;
+      padding:13px 26px; font-weight:700; font-size:1rem; color:var(--tief);
+      background:var(--papier); border:1px solid var(--linie); border-radius:99px;
+      box-shadow:0 4px 0 var(--linie), 0 8px 18px var(--schatten);
+      transition:box-shadow .15s ease, transform .15s ease}
+.mehr>summary:hover{box-shadow:0 6px 0 var(--linie), 0 12px 22px var(--schatten);
+      transform:translateY(-1px)}
+.mehr>summary:active{box-shadow:0 2px 0 var(--linie); transform:translateY(2px)}
+.mehr>summary::after{content:""; width:9px; height:9px; border:0;
+      border-right:2.5px solid currentColor; border-bottom:2.5px solid currentColor;
+      transform:translateY(-3px) rotate(45deg); font-size:0}
+.mehr[open]>summary::after{transform:translateY(2px) rotate(225deg)}
+.mehr-inhalt{margin-top:clamp(26px,3vw,36px)}
+
 footer.site{background:var(--himmel-hell); padding-block:46px 54px;
             font-size:.9rem; color:var(--tief-weich); margin-top:20px}
 .recht{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:28px}
