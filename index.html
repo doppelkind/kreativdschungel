@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>Malbücher &amp; Wimmelbuch für Kinder ab 4 — Kreativ Dschungel</title>
-<meta name="description" content="Zwei Malbücher mit je 40 Motiven und ein Weihnachts-Wimmelbuch für Kinder ab 4 Jahren. Blick ins Buch online, erhältlich bei Amazon.">
+<title>Malbücher ab 4 und Weihnachts-Wimmelbuch ab 2 — Kreativ Dschungel</title>
+<meta name="description" content="Zwei Malbücher mit je 40 Motiven ab 4 Jahren und ein Weihnachts-Wimmelbuch ab 2 Jahren. Blick ins Buch online, erhältlich bei Amazon.">
 <meta name="author" content="Sebastian Mentzel">
 <link rel="canonical" href="https://kreativdschungel.de/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Kreativ Dschungel">
-<meta property="og:title" content="Malbücher und Wimmelbuch für Kinder ab 4 Jahren">
+<meta property="og:title" content="Malbücher ab 4 und Weihnachts-Wimmelbuch ab 2 Jahren">
 <meta property="og:description" content="Zwei Malbücher mit je 40 Motiven und ein Weihnachts-Wimmelbuch. Mit Blick ins Buch.">
 <meta property="og:image:type" content="image/png">
 <meta property="og:url" content="https://kreativdschungel.de/">
@@ -94,9 +94,6 @@ h2{font-size:clamp(1.9rem,4.4vw,2.9rem); margin-block:10px 14px}
 .lead{font-size:clamp(1.03rem,1.7vw,1.17rem); color:var(--tief-weich); max-width:62ch}
 
 /* ---------- Hinweisstreifen: nach dem Ausfüllen löschen ---------- */
-.hinweis{background:var(--tief); color:var(--creme); font-family:var(--titel);
-         font-weight:600; font-size:.86rem; padding:10px 20px; text-align:center}
-.hinweis b{color:var(--gelb)}
 
 /* ---------- Kopfzeile ---------- */
 header.site{position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
@@ -204,10 +201,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 :root[data-theme="dark"] .anlaesse li{color:#0E1C08}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .anlaesse li{color:#0E1C08}}
 
-.autor{display:grid; grid-template-columns:.7fr 1.3fr; gap:clamp(24px,5vw,52px); align-items:center}
-.autor .bild{border-radius:var(--r-xl); overflow:hidden; background:var(--papier);
-             box-shadow:0 6px 20px var(--schatten)}
-@media (max-width:760px){ .autor{grid-template-columns:1fr} }
+.autor{max-width:68ch}
 
 .postfach{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:22px;
           background:var(--papier); border-radius:99px; padding:9px 9px 9px 22px;
@@ -240,11 +234,6 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
 </head>
 <body>
 
-<div class="hinweis">
-  Vorschau — <b>Impressum, E-Mail-Adresse, Autorentext</b> und die
-  <b>Altersangabe des Wimmelbuchs</b> sind noch offen. Danach diese Zeile löschen.
-</div>
-
 <header class="site">
   <div class="wrap bar">
     <a class="marke" href="#oben">
@@ -270,7 +259,7 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
   <span class="wolke w1"></span><span class="wolke w2"></span>
   <div class="wrap hero-raster">
     <div>
-      <p class="kicker">Malbücher und Wimmelbuch ab 4 Jahren</p>
+      <p class="kicker">Malbücher ab 4 · Wimmelbuch ab 2 Jahren</p>
       <h1>Bücher, die Kinder <span class="ton">selbst entdecken</span></h1>
       <p class="lead">Ein Weihnachts-Wimmelbuch zum Suchen und Erzählen und zwei Malbücher mit je vierzig Motiven zum Ausmalen. Alle drei von Sebastian Mentzel, alle drei bei Amazon erhältlich — und alle so gemacht, dass Kinder damit allein etwas anfangen können.</p>
       <div class="tasten">
@@ -465,10 +454,6 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
 
 <section id="autor">
   <div class="wrap autor">
-    <div class="bild">
-      <img src="bilder/titelseite.png" width="760" height="991" loading="lazy"
-           alt="Titelseite des Malbuchs mit Katze und Elefant und einer Linie zum Eintragen des Namens">
-    </div>
     <div>
       <p class="kicker">Über mich</p>
       <h2>Sebastian Mentzel</h2>
