@@ -183,30 +183,41 @@ summary::after{content:"+"; font-size:1.5rem; color:var(--orange); line-height:1
 details[open] summary::after{transform:rotate(45deg)}
 .antwort{padding:0 22px 19px; color:var(--tief-weich)}
 
-/* Buchabschnitte: unter dem Buchkopf steckt alles hinter einem Aufklapper,
-   damit die drei Bücher auf den ersten Blick gleich viel Platz einnehmen.
-   Die globalen details-Regeln oben gelten der Fragen-Liste und werden hier
-   zurückgenommen. */
-.mehr{background:none; box-shadow:none; border-radius:0; overflow:visible;
-      margin-top:clamp(28px,4vw,42px)}
-.mehr>summary{display:inline-flex; width:auto; justify-content:flex-start; gap:12px;
-      padding:13px 26px; font-weight:700; font-size:1rem; color:var(--tief);
-      background:var(--papier); border:1px solid var(--linie); border-radius:99px;
-      box-shadow:0 4px 0 var(--linie), 0 8px 18px var(--schatten);
-      transition:box-shadow .15s ease, transform .15s ease}
-.mehr>summary:hover{box-shadow:0 6px 0 var(--linie), 0 12px 22px var(--schatten);
-      transform:translateY(-1px)}
-.mehr>summary:active{box-shadow:0 2px 0 var(--linie); transform:translateY(2px)}
-.mehr>summary::after{content:""; width:9px; height:9px; border:0;
-      border-right:2.5px solid currentColor; border-bottom:2.5px solid currentColor;
-      transform:translateY(-3px) rotate(45deg); font-size:0}
-.mehr[open]>summary::after{transform:translateY(2px) rotate(225deg)}
-.mehr-inhalt{margin-top:clamp(26px,3vw,36px)}
+/* Blick ins Buch: ein einziges Raster, das beim Aufklappen wächst.
+   Zugeklappt stehen die ersten beiden Bilder, der Rest wird ausgeblendet —
+   so ergänzen sich die weiteren Motive ins selbe Raster, statt darunter
+   noch einmal als eigener Block zu erscheinen.
+   Umgesetzt mit einer Checkbox statt details/summary, weil ein details-Element
+   seinen Inhalt immer als geschlossenen Block führt und sich nicht in ein
+   darüberliegendes Raster einfügen lässt. Kein JavaScript nötig. */
+.mehr-schalter{position:absolute; width:1px; height:1px; opacity:0; pointer-events:none}
 
-/* Zwei Motive stehen ueber dem Aufklapper — bei einem Malbuch sind die Bilder
-   das Verkaufsargument, und zugeklappt sieht sie niemand. */
-.motive.zwei{grid-template-columns:repeat(2,1fr); max-width:620px}
-@media (max-width:560px){ .motive.zwei{grid-template-columns:1fr; max-width:320px} }
+.mehr-schalter:not(:checked) ~ .motive > figure:nth-child(n+3),
+.mehr-schalter:not(:checked) ~ .szenen > figure:nth-child(n+3){display:none}
+.mehr-schalter:not(:checked) ~ .motive{grid-template-columns:repeat(2,1fr); max-width:620px}
+.mehr-schalter:not(:checked) ~ .extra{display:none}
+.extra{margin-top:clamp(26px,3vw,36px)}
+
+.mehr-knopf{display:inline-flex; align-items:center; gap:12px; cursor:pointer;
+  margin-top:clamp(26px,3vw,34px);
+  font-family:var(--titel); font-weight:700; font-size:1rem; color:var(--tief);
+  background:var(--papier); border:1px solid var(--linie); border-radius:99px;
+  padding:13px 26px; box-shadow:0 4px 0 var(--linie), 0 8px 18px var(--schatten);
+  transition:box-shadow .15s ease, transform .15s ease}
+.mehr-knopf:hover{box-shadow:0 6px 0 var(--linie), 0 12px 22px var(--schatten);
+  transform:translateY(-1px)}
+.mehr-knopf:active{box-shadow:0 2px 0 var(--linie); transform:translateY(2px)}
+.mehr-knopf::after{content:""; width:9px; height:9px;
+  border-right:2.5px solid currentColor; border-bottom:2.5px solid currentColor;
+  transform:translateY(-3px) rotate(45deg)}
+.mehr-schalter:checked ~ .mehr-knopf::after{transform:translateY(2px) rotate(225deg)}
+.mehr-schalter:not(:checked) ~ .mehr-knopf .zu{display:none}
+.mehr-schalter:checked ~ .mehr-knopf .auf{display:none}
+.mehr-schalter:focus-visible ~ .mehr-knopf{outline:3px solid var(--orange); outline-offset:3px}
+
+@media (max-width:560px){
+  .mehr-schalter:not(:checked) ~ .motive{grid-template-columns:1fr; max-width:320px}
+}
 
 footer.site{background:var(--himmel-hell); padding-block:46px 54px;
             font-size:.9rem; color:var(--tief-weich); margin-top:20px}
