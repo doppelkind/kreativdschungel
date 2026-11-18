@@ -225,6 +225,9 @@ footer.site{background:var(--himmel-hell); padding-block:46px 54px;
 .recht h3{font-family:var(--titel); font-size:.88rem; letter-spacing:.08em;
           text-transform:uppercase; color:var(--tief); margin-bottom:10px}
 .recht p{margin-bottom:6px}
+.recht a{color:var(--tief); text-decoration:underline; text-underline-offset:3px;
+          text-decoration-thickness:1px}
+.recht a:hover{text-decoration-thickness:2px}
 .abspann{margin-top:34px; padding-top:20px; border-top:1px solid var(--linie);
          display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; font-size:.84rem}
 
