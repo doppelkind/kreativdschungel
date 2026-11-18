@@ -116,3 +116,15 @@ Absatz zur Drittlandsübermittlung in der Datenschutzerklärung. Prüfe die
 Anschrift gegen GitHubs eigene Angaben und schließe den
 Auftragsverarbeitungsvertrag ab. Wenn du später Statistiken willst, nimm etwas ohne Cookies
 (Plausible, Fathom) — sonst wird das Banner doch fällig.
+
+## Stilaenderungen sichtbar machen
+
+GitHub Pages liefert alle Dateien mit `Cache-Control: max-age=600` aus. Ein
+geaendertes `stil.css` erreicht Besucher deshalb bis zu zehn Minuten lang nicht.
+Deshalb haengt am Stylesheet-Verweis eine Versionsnummer:
+
+    <link rel="stylesheet" href="stil.css?v=20261118a">
+
+Bei jeder Aenderung an `stil.css` die Nummer in allen drei HTML-Dateien
+hochzaehlen (Datum plus Buchstabe). Dann laedt jeder Browser die neue Fassung
+sofort, statt die alte aus dem Zwischenspeicher zu nehmen.
