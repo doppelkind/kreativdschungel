@@ -165,7 +165,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 :root[data-theme="dark"] .anlaesse li{color:#0E1C08}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .anlaesse li{color:#0E1C08}}
 
-.autor{max-width:68ch}
+.autor > div{max-width:68ch}
 
 .postfach{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:22px;
           background:var(--papier); border-radius:99px; padding:9px 9px 9px 22px;
@@ -192,9 +192,8 @@ details[open] summary::after{transform:rotate(45deg)}
    darüberliegendes Raster einfügen lässt. Kein JavaScript nötig. */
 .mehr-schalter{position:absolute; width:1px; height:1px; opacity:0; pointer-events:none}
 
-.mehr-schalter:not(:checked) ~ .motive > figure:nth-child(n+3),
+.mehr-schalter:not(:checked) ~ .motive > figure:nth-child(n+4){display:none}
 .mehr-schalter:not(:checked) ~ .szenen > figure:nth-child(n+3){display:none}
-.mehr-schalter:not(:checked) ~ .motive{grid-template-columns:repeat(2,1fr); max-width:620px}
 .mehr-schalter:not(:checked) ~ .extra{display:none}
 .extra{margin-top:clamp(26px,3vw,36px)}
 
@@ -215,8 +214,9 @@ details[open] summary::after{transform:rotate(45deg)}
 .mehr-schalter:checked ~ .mehr-knopf .auf{display:none}
 .mehr-schalter:focus-visible ~ .mehr-knopf{outline:3px solid var(--orange); outline-offset:3px}
 
-@media (max-width:560px){
-  .mehr-schalter:not(:checked) ~ .motive{grid-template-columns:1fr; max-width:320px}
+/* Einspaltig wuerden drei Vorschaubilder zu viel Platz nehmen. */
+@media (max-width:440px){
+  .mehr-schalter:not(:checked) ~ .motive > figure:nth-child(n+3){display:none}
 }
 
 footer.site{background:var(--himmel-hell); padding-block:46px 54px;
